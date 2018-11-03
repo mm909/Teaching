@@ -19,7 +19,9 @@ body {
 * {
   box-sizing: border-box
 }
-
+strong {
+  font-weight: bold !important;
+}
 a, a:hover {
   color: #222;
   text-decoration: none
@@ -56,6 +58,33 @@ h6 {
 
 code {
   background-color: rgba(27, 31, 35, .05);
+  border-radius: 3px;
+  color: inherit;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-size: 85%;
+  margin: 0;
+  padding: 3.2px 6.4px
+}
+codeR {
+  background-color: rgba(255, 0, 0, .1);
+  border-radius: 3px;
+  color: inherit;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-size: 85%;
+  margin: 0;
+  padding: 3.2px 6.4px
+}
+codeG {
+  background-color: rgba(0, 250, 0, .1);
+  border-radius: 3px;
+  color: inherit;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-size: 85%;
+  margin: 0;
+  padding: 3.2px 6.4px
+}
+codeB {
+  background-color: rgba(0, 0, 250, .1);
   border-radius: 3px;
   color: inherit;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
