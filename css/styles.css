@@ -92,6 +92,27 @@ codeB {
   margin: 0;
   padding: 3.2px 6.4px
 }
+textR {
+  background-color: rgba(255, 0, 0, .1);
+  border-radius: 3px;
+  color: inherit;
+  margin: 0;
+  padding: 3.2px 6.4px
+}
+textG {
+  background-color: rgba(0, 250, 0, .1);
+  border-radius: 3px;
+  color: inherit;
+  margin: 0;
+  padding: 3.2px 6.4px
+}
+textB {
+  background-color: rgba(0, 0, 250, .1);
+  border-radius: 3px;
+  color: inherit;
+  margin: 0;
+  padding: 3.2px 6.4px
+}
 article:after, article:before {
   content: "";
   display: table
