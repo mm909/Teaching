@@ -9,6 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script type= "text/javascript" src= "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
   <script type= "text/javascript" src= "../../../js/prettyPrint.js"></script>
+  <script type= "text/javascript" src= "../../../js/progressbar.js"></script>
   <script type= "text/javascript" src= "../../../js/smoothscroll.js"></script>
   <script type= "text/javascript" src= "../../../js/question.js"></script>
   <script type= "text/javascript" src= "showcase/sketch.js"></script>
@@ -57,6 +58,7 @@
                     <li class="navListItem"><a class="navItem" href="#followingthemouse">5. Following the mouse!</a></li>
                     <li class="navListItem"><a class="navItem" href="#finishup">6. Finish up</a></li>
                     <li class="navListItem"><a class="navItem" href="#challenge"><codeR>Challenge</codeR> </a></li>
+                    <progress id="pb" value="0" max="100"></progress>
                   </ul>
                 </div>
               </div>
@@ -163,8 +165,8 @@ function draw() {
 
             <a id="addingvariables"><h2>Adding Variables</h2></a>
             <p>We will need to make variables to hold the circle's x and y location.</p>
-            <p>We can add a varible to our program by using the <code>var</code> keyword followed by a name.</p>
-            <p>We can assign values to those varibles using the assignment operator: <code>=</code> </p>
+            <p>We can add a variables to our program by using the <code>var</code> keyword followed by a name.</p>
+            <p>We can assign values to those variables using the assignment operator: <code>=</code> </p>
 
             <div id="q4">
               <p>
@@ -175,7 +177,7 @@ function draw() {
             <section class="noselect">
             <div class='CodeBox'>
             <pre class="prettyprint linenums lang-js CodeBoxBuffer">
-var height = 20;
+var red = 255;
 var width = 200.00;
 var age = 7;
 var name = "Mikian";
@@ -183,7 +185,7 @@ var name = "Mikian";
             </div>
             </section>
 
-            <p>
+            <p id="addingvariables2">
             Lets make a variable for the circle's x and y posistion.
             Then we can replace the "hard coded" values in the <code>ellipse()</code> function with our new variables.
             </p>
@@ -231,6 +233,7 @@ function draw() {
             </div>
             </section>
 
+            <a class="class-page-link button" href="https://github.com/mm909/Teaching/tree/master/projects/introp5/project1/code" rel="noreferrer noopener">GitHub: Final Code</a>
 
             <a  id="finishup"><h2>Finish Up</h2></a>
             <p>We are done! Congrats on finishing your first p5 project.</p>
@@ -247,12 +250,28 @@ function draw() {
             <p>Completing this project is worth <codeG> 500 points.</codeG> You can complete the challenges for up to <codeB> 1000 bonus points.</codeB></p>
 
             <a  id="challenge"><h2><codeR> Challenges </codeR></h2></a>
+            <p>Challenges are desgined to be hard! Don't worry if you cannot get it right away. Look at the hints if you get stuck or raise your hand and we can work on it together.</p>
             <p><codeR> Challenge 1: Change the circle to a rectangle - 200 points</codeR></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Change the shape that is following the mouse. We want to draw a rectangle instead of a circle. To do that you will have to find the function that draws a rectangle from the <a href="https://p5js.org/reference/#group-Shape"><u> p5.js reference page.</u></a></p>
+            <div id="q5">
+              <p>
+                <codeG class="question" id="5" >Hint:</codeG>
+                <span class="answer">Look in the "Shape" section under the "2D Primitives" column.</span>
+              </p>
+            </div>
             <p><codeR> Challenge 2: Use variables for the colors - 300 points</codeR></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Eventually we will change the color of our shapes while the program is running. To do this we need to use variables to store the R, G, and B values.</p>
+            <p>This one is tricky. You should break it up into two steps. </p>
+            <p>1. Create and name the variables like we did <a href="#addingvariables"><u>here.</u></a></p>
+            <p>2. Replace the old values with the new variables like we did <a href="#addingvariables2"><u>here.</u></a></p>
+            <div id="q6">
+              <p>
+                <codeG class="question" id="6" >Hint:</codeG>
+                <span class="answer">Replace the three numbers in the <code>fill()</code> with your new red, green, and blue variables. </span>
+              </p>
+            </div>
             <p><codeR> Challenge 3: Make the colors change using the mouse - 500 points</codeR></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>We want to create an even more interactive sketch and change the color as we move the mouse.</p>
 
 
             </article>

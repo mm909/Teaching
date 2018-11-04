@@ -17,10 +17,13 @@ function setup() {
 function draw() {
   background(151);
   x = mouseX;
+  y = mouseY;
   fill(r, g, b)
   // noFill();
   noStroke();
   // stroke(255);
   // strokeWeight(5);
-  ellipse(x, height / 2, 20, 20)
+  x = constrain(x, 0, width);
+  y = constrain(y, 0, height);
+  ellipse(x, y, 20, 20)
 }
