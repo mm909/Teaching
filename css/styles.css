@@ -365,7 +365,12 @@ footer.nav-footer {
 .question {
   width: auto;
 }
-
 .answer {
   display: none;
+}
+
+#pb{
+  width: 95%;
+  margin: auto;
+  max-width: 150px;
 }
