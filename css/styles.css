@@ -359,6 +359,15 @@ footer.nav-footer {
   font-size: 150%;
   margin-bottom: 1em;
 }
+.CodeBoxL {
+  margin: auto;
+  width: 100%;
+  color: #fff;
+  border-radius: 20px;
+  padding: 2px;
+  font-size: 150%;
+  margin-bottom: 1em;
+}
 .CodeBoxBuffer {
   padding-top: 5px;
   padding-bottom: 5px;

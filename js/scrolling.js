@@ -2,7 +2,7 @@ var maxScroll = 0;
 var currScroll = 0;
 var startScroll = 0;
 
-jQuery(document).ready(function() {
+$(document).ready(function() {
   maxScroll = document.body.scrollHeight - window.innerHeight;
   startScroll = $(document).scrollTop();
   currScroll = startScroll;
