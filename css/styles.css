@@ -22,6 +22,9 @@ body {
 strong {
   font-weight: bold !important;
 }
+i {
+  font-style: italic;
+}
 a, a:hover {
   color: #222;
   text-decoration: none
@@ -374,3 +377,66 @@ footer.nav-footer {
   margin: auto;
   max-width: 150px;
 }
+#toc > section {
+  display: none;
+}
+
+
+.paraSection {
+  background-color: #edf4f7;
+  width: 99%;
+  margin: auto;
+  padding-top: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+}
+
+.para {
+  overflow: hidden;
+}
+.fl {
+  width: 50%;
+  float:left;
+}
+.fr {
+  width: 50%;
+  float:right;
+}
+
+.tutImageContainer {
+  width: 90%;
+  margin: auto;
+}
+
+.tutImage {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
