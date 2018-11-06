@@ -7,6 +7,7 @@ $(document).ready(function() {
   startScroll = $(document).scrollTop();
   currScroll = startScroll;
   updatePB();
+  createTOC();
   updateTOC();
 });
 
