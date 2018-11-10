@@ -249,7 +249,7 @@ article:after, article:before {
 
 .docsNavContainer {
   flex: 0 0 240px;
-  height: calc(50vh );
+  height: calc(100vh );
   position: -webkit-sticky;
   position: sticky;
   overflow-y: auto;
