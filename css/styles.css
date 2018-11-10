@@ -166,7 +166,6 @@ article:after, article:before {
 .fixedHeaderContainer {
   background: #222;
   color: #fff;
-  min-height: 50px;
   padding: 8px 0;
   position: fixed;
   width: 100%;
@@ -390,7 +389,9 @@ footer.nav-footer {
   display: none;
 }
 
-
+.paraTitle{
+  text-align: center;
+}
 .paraSection {
   background-color: #edf4f7;
   width: 99%;
@@ -422,7 +423,9 @@ footer.nav-footer {
   width: 100%;
 }
 
-
+.smallText {
+  font-size: 10px;
+}
 
 
 
