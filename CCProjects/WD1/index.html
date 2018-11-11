@@ -3,12 +3,13 @@
 
 <head>
   <title>WD1</title>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css"></script>
   <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="../../css/prettyPrint.css">
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
-  <script type="text/javascript" src="../../js/prettyPrint.js"></script>
+  <!-- <script type="text/javascript" src="../../js/prettyPrint.js"></script> -->
   <script type="text/javascript" src="../../js/scrolling.js"></script>
   <script type="text/javascript" src="../../js/progressbar.js"></script>
   <script type="text/javascript" src="../../js/toc.js"></script>
@@ -612,8 +613,8 @@
                         there.
                       </p>
                       <p>
-                      You may need to rename it to something that
-                      makes more sense.
+                        You may need to rename it to something that
+                        makes more sense.
                       </p>
                     </div>
                     <div class="fr">
@@ -649,7 +650,7 @@
                 </div>
                 <br>
                 <p>
-                   <code> &lt;image></code> tag allows you to import images in your website. Notice that the src is equal to
+                  <code> &lt;image></code> tag allows you to import images in your website. Notice that the src is equal to
                   “images/walle.jpg”? This is because that the image is stored in a sub-folder of what is called
                   the “root” folder.
                 </p>
@@ -658,16 +659,16 @@
               <section id="section_MULTIPAGES">
                 <a id="_MULTIPAGES"><h2><codeG>Multi Pages</codeG></h2></a>
                 <p>
-                One page is all fine and dandy, but we want to be able to navigate to other pages on our site! We
-                are going to explore two very common ways that users can move from one page to another.
+                  One page is all fine and dandy, but we want to be able to navigate to other pages on our site! We
+                  are going to explore two very common ways that users can move from one page to another.
                 </p>
                 <a id="links"><h2>Links <code>&lt;a&gt;</code></h2></a>
                 <p>To start things off, the single most basic way to navigate to another page is the anchor tag.</p>
                 <h3 class="paraTitle">&lt;a> tag to other sites</h3>
                 <div class="paraSection">
                   <div class="para">
-                      <div class='CodeBoxL'>
-                        <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-html CodeBoxBuffer">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -718,10 +719,11 @@
                   <div class="para">
                     <p>
                       Edit the newpage with the same rules as the
-                      other page, (<!DOCTYPE>, etc).
+                      other page, (
+                      <!DOCTYPE>, etc).
                     </p>
-                      <div class='CodeBoxL'>
-                        <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-html CodeBoxBuffer">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -744,8 +746,8 @@
                       “newpage.html”
                     </p>
 
-                      <div class='CodeBoxL'>
-                        <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-html CodeBoxBuffer">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -765,16 +767,16 @@
                       link, it should move you to the next page. Did
                       it?
                     </p>
-                    </div>
+                  </div>
                 </div>
 
                 <a id="button"><h2>Button <code>&lt;button&gt;</code></h2></a>
                 <p>Sometimes an <code> &lt;a></code> tag seems a bit plain, that is when it can be useful to use a button instead.</p>
                 <h3 class="paraTitle">&lt;button> with anchor </h3>
-                  <div class="paraSection">
-                    <div class="para">
-                        <div class='CodeBoxL'>
-                          <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+                <div class="paraSection">
+                  <div class="para">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-html CodeBoxBuffer">
   &lt;!DOCTYPE html&gt;
   &lt;html&gt;
     &lt;head&gt;
@@ -787,16 +789,16 @@
     &lt;/body&gt;
   &lt;/html&gt;
                            </pre>
-                      </div>
-                        <p>
-                          Almost anything can be turned into a link if
-                          you put it inside an anchor tag.
-                        </p>
-                        <p>
-                          Definitely something that you should play
-                          around with.
-                        </p>
                     </div>
+                    <p>
+                      Almost anything can be turned into a link if
+                      you put it inside an anchor tag.
+                    </p>
+                    <p>
+                      Definitely something that you should play
+                      around with.
+                    </p>
+                  </div>
                 </div>
               </section>
 
@@ -812,7 +814,7 @@
                   Just like everything else, our CSS file will be separate and linked onto the website. This is done
                   so that the style can be reused between pages
                 </p>
-                <h3 class="paraTitle">Creating website folder </h3>
+                <h3 class="paraTitle">Creating CSS file</h3>
                 <div class="paraSection">
                   <div class="para">
                     <div class="fl">
@@ -850,21 +852,184 @@
                 </div>
 
                 <a id="thebasics"><h2>The Basics</h2></a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat.
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>There are so many uses for CSS, the basic of which is text alignment, size, and color</p>
+                <h3 class="paraTitle">Creating CSS file</h3>
+                <div class="paraSection">
+                  <div class="para">
+                    <p>
+                      Open the stylesheet.css file and add the
+                      following code…
+                    </p>
+                    <p>
+                      Body: Is where most of your code is placed in
+                      your HTML file (remember the
+                      &lt;body>&lt;/body> tags?) So altering the “body”
+                      element is altering the entirety of your page.
+                    </p>
+                    <p>
+                      h1/p: The h1 and p element inside your
+                      HTML Code
+                    </p>
+                    <p>
+                      All of these are known as “rules” for your
+                      style. The <strong> selector</strong>​ is the element you’re
+                      changing, and the <strong> declaration​</strong> is what is
+                      being changed from what you selected.
+                    </p>
+                  </div>
+                  <div class='CodeBoxL'>
+                    <pre class="prettyprint linenums lang-css CodeBoxBuffer" >
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+}
+                    </pre>
+                  </div>
+                </div>
+
                 <a id="connectingthetwo"><h2>Connecting the two <code>&lt;link&gt;</code></h2></a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat.
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="paraSection">
+                  <div class='CodeBoxL'>
+                    <pre class="prettyprint linenums lang-html CodeBoxBuffer" >
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;link rel="stylesheet" type="text/css" href="stylesheet/stylesheet.css">
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My Website!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;h1>Come to our site&lt;/h1>
+  &lt;a href="newpage.html">&lt;button>Next Page&lt;/button>&lt;/a>
+  &lt;/body&gt;
+&lt;/html&gt;
+                    </pre>
+                  </div>
+                  <div class="para">
+                    <div class="tutImageContainer">
+                      <img class="tutImage" src="examples/images/cssstart.png" alt=""></img>
+                    </div>
+                  </div>
+                  <p>
+                    The
+                    &lt;link> tag imports external files into our file to be used. In this case, it gives this file the
+                    CSS style. Notice how different it looks?
+                  </p>
+                </div>
+
                 <a id="id"><h2>Id <code>#</code></h2></a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat.
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>
+                  Beyond selecting rules for elements, you can also select specific elements by either “id” or
+                  “class”. They are both very similar, the difference is that “id” is meant for one element while
+                  “class” is for multiple.
+                </p>
+
+                <div class="paraSection">
+                  <div class='CodeBoxL'>
+                    <pre class="prettyprint linenums lang-html CodeBoxBuffer" >
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;link rel="stylesheet" type="text/css" href="stylesheet/stylesheet.css">
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My Website!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;p id="para1"> Hello World! &lt;/p>
+  &lt;p>This paragraph is not affected by the style.&lt;/p>
+  &lt;/body&gt;
+&lt;/html&gt;
+                    </pre>
+                  </div>
+                  <div class="para">
+                    <div class="fl">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-css CodeBoxBuffer" >
+#para1 {
+  text-align: center;
+  color: red;
+}                       </pre>
+                      </div>
+                    </div>
+                    <div class="fr">
+                      <div class="tutImageContainer">
+                        <img class="tutImage" src="examples/images/advancedcss.png" alt=""></img>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    <i>
+                    Notice how they’re both <code>&lt;p>&lt;/p></code> tags? But
+                    only one is changed, that’s why we have “id”
+                    properties?
+                    </i>
+                  </p>
+                  <p>
+                    “id” elements are accessed by “#” in front of them in the CSS file.
+                  </p>
+                </div>
+
                 <a id="class"><h2>Class <code>.</code></h2></a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat.
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>
+                  You’ve done “id” for one element, now to see class affect multiple elements.
+                </p>
+
+                <div class="paraSection">
+                  <div class='CodeBoxL'>
+                    <pre class="prettyprint linenums lang-html CodeBoxBuffer" >
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;link rel="stylesheet" type="text/css" href="stylesheet/stylesheet.css">
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My Website!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;h1 class="center">Red and center-aligned heading&lt;/h1>
+  &lt;p class="center">Red and center-aligned heading&lt;/p>
+  &lt;/body&gt;
+&lt;/html&gt;
+                    </pre>
+                  </div>
+                  <div class="para">
+                    <div class="fl">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-css CodeBoxBuffer" >
+.center {
+  text-align: center;
+  color: red;
+}                       </pre>
+                      </div>
+                    </div>
+                    <div class="fr">
+                      <div class="tutImageContainer">
+                        <img class="tutImage" src="examples/images/advancedcss.png" alt=""></img>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    <i>
+                      Both different elements (one an h1, and the
+                      other a p tag) yet they are both now changed.
+                    </i>
+                  </p>
+                  <p>
+                    To change the rule of a “class”, put a period (.) before the class name in your CSS rule.
+                  </p>
+                </div>
+                <br>
+                <p>
+                  There are so many ways to alter CSS, go to <a href="https://www.w3schools.com/css/default.asp"><u>here</u></a> for many
+                  more things that you can do with CSS.
+                </p>
               </section>
 
               <section id="section_NAVBAR">
