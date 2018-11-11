@@ -413,6 +413,10 @@ footer.nav-footer {
   width: 50%;
   float:right;
 }
+.fm {
+  text-align: middle;
+  margin: auto;
+}
 
 .tutImageContainer {
   width: 90%;
@@ -426,7 +430,10 @@ footer.nav-footer {
 .smallText {
   font-size: 10px;
 }
-
+.img-s {
+  max-width: 500px;
+  max-height: 500px;
+}
 
 
 

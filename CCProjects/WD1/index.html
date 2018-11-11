@@ -51,9 +51,12 @@
                       <li class="navListItem"><a class="navItem" href="#lists">4. Lists <code>&lt;ol&gt;</code></a></li>
                       <li class="navListItem"><a class="navItem" href="#tables">5. Tables <code>&lt;table&gt;</code></a></li>
                       <li class="navListItem"><a class="navItem" href="#images">6. Images <code>&lt;image&gt;</code></a></li>
-                      <li class="navListItem"><a class="navItem" href="#links">7. Links <code>&lt;a&gt;</code></a></li>
-                      <li class="navListItem"><a class="navItem" href="#secondpage">8. Second Page <code>&lt;a&gt;</code></a></li>
-                      <li class="navListItem"><a class="navItem" href="#button">9. Button <code>&lt;button&gt;</code></a></li>
+                    </section>
+                    <li class="navListItem"><a class="navItem" href="#_MULTIPAGES"><codeG>&lt;Multi Pages&gt;</codeG> </a></li>
+                    <section id="TOC_MULTIPAGES">
+                      <li class="navListItem"><a class="navItem" href="#links">1. Links <code>&lt;a&gt;</code></a></li>
+                      <li class="navListItem"><a class="navItem" href="#secondpage">2. Second Page <code>&lt;a&gt;</code></a></li>
+                      <li class="navListItem"><a class="navItem" href="#button">3. Button <code>&lt;button&gt;</code></a></li>
                     </section>
                     <li class="navListItem"><a class="navItem" href="#_CSS"><codeG>&lt;CSS&gt;</codeG> </a></li>
                     <section id="TOC_CSS">
@@ -584,7 +587,7 @@
                     </div>
                     <div class="fr">
                       <div class="tutImageContainer">
-                        <img class="tutImage" src="examples/images/newfolder.png" alt=""></img>
+                        <img class="tutImage" src="examples/images/imageone.png" alt=""></img>
                       </div>
                     </div>
                   </div>
@@ -597,7 +600,7 @@
                     </div>
                     <div class="fr">
                       <div class="tutImageContainer">
-                        <img class="tutImage" src="examples/images/firstwebsite.png" alt=""></img>
+                        <img class="tutImage" src="examples/images/imagetwo.png" alt=""></img>
                       </div>
                     </div>
                   </div>
@@ -608,47 +611,244 @@
                         called “images” and place your picture in
                         there.
                       </p>
+                      <p>
+                      You may need to rename it to something that
+                      makes more sense.
+                      </p>
                     </div>
                     <div class="fr">
                       <div class="tutImageContainer">
-                        <img class="tutImage" src="examples/images/firstwebsite.png" alt=""></img>
+                        <img class="tutImage" src="examples/images/renameimage.png" alt=""></img>
                       </div>
                     </div>
                   </div>
                   <div class="para">
                     <div class="fl">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My Website!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1>Time to add an image&lt;/h1>
+    &lt;img src="images/walle.jpg">
+  &lt;/body&gt;
+&lt;/html&gt;
+                         </pre>
+                      </div>
+                    </div>
+                    <div class="fr">
+                      <div class="tutImageContainer">
+                        <img class="tutImage" src="examples/images/walleimage.png" alt=""></img>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <p>
+                   <code> &lt;image></code> tag allows you to import images in your website. Notice that the src is equal to
+                  “images/walle.jpg”? This is because that the image is stored in a sub-folder of what is called
+                  the “root” folder.
+                </p>
+              </section>
+
+              <section id="section_MULTIPAGES">
+                <a id="_MULTIPAGES"><h2><codeG>Multi Pages</codeG></h2></a>
+                <p>
+                One page is all fine and dandy, but we want to be able to navigate to other pages on our site! We
+                are going to explore two very common ways that users can move from one page to another.
+                </p>
+                <a id="links"><h2>Links <code>&lt;a&gt;</code></h2></a>
+                <p>To start things off, the single most basic way to navigate to another page is the anchor tag.</p>
+                <h3 class="paraTitle">&lt;a> tag to other sites</h3>
+                <div class="paraSection">
+                  <div class="para">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My Website!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;h1>Come to our site&lt;/h1>
+  &lt;p>Click on &lt;a href="https://mycodecentral.com/">this</a>
+     word to go to our site&lt;/p>
+  &lt;/body&gt;
+&lt;/html&gt;
+                         </pre>
+                    </div>
+                    <div class="fm img-s">
+                      <div class="tutImageContainer">
+                        <img class="tutImage" src="examples/images/link.png" alt=""></img>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <p>Clicking on the link between the <code> &lt;a>&lt;/a></code> tags will send your user to another page.</p>
+
+                <a id="secondpage"><h2>Second Page <code>&lt;a&gt;</code></h2></a>
+                <p>
+                  Knowing how to move to other websites is all well and good, however, most web developers will
+                  have links that will lead to other pages on their own site
+                </p>
+
+                <h3 class="paraTitle">&lt;a> for other pages on your own site </h3>
+                <div class="paraSection">
+                  <div class="para">
+                    <div class="fl">
                       <p>
-                        Right click on image
+                        Go to your project folder, right click and
+                        create a new text file and call it
+                        “newpage.html”.
                       </p>
                     </div>
                     <div class="fr">
                       <div class="tutImageContainer">
-                        <img class="tutImage" src="examples/images/firstwebsite.png" alt=""></img>
+                        <img class="tutImage" src="examples/images/secondpageone.png" alt=""></img>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="para">
+                    <p>
+                      Edit the newpage with the same rules as the
+                      other page, (<!DOCTYPE>, etc).
+                    </p>
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My Second Page!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;h1>Welcome To Page Two!&lt;/h1>
+  &lt;p>It's different than where you came from!&lt;/p>
+  &lt;/body&gt;
+&lt;/html&gt;
+
+                         </pre>
+                    </div>
+                  </div>
+                  <div class="para">
+                    <p>
+                      Edit the index.html page to include an anchor
+                      (&lt;a>&lt;/a>) tag with an href to
+                      “newpage.html”
+                    </p>
+
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My Website!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;h1>Come to our site&lt;/h1>
+  &lt;p>Click on &lt;a href="https://mycodecentral.com/">this</a>
+     word to go to our site&lt;/p>
+  &lt;/body&gt;
+&lt;/html&gt;
+                         </pre>
+                    </div>
+                    <p>
+                      If you open index.html and click on the new
+                      link, it should move you to the next page. Did
+                      it?
+                    </p>
+                    </div>
+                </div>
+
+                <a id="button"><h2>Button <code>&lt;button&gt;</code></h2></a>
+                <p>Sometimes an <code> &lt;a></code> tag seems a bit plain, that is when it can be useful to use a button instead.</p>
+                <h3 class="paraTitle">&lt;button> with anchor </h3>
+                  <div class="paraSection">
+                    <div class="para">
+                        <div class='CodeBoxL'>
+                          <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;meta charset="utf-8"&gt;
+      &lt;title&gt;My Website!&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1>Come to our site&lt;/h1>
+    &lt;a href="newpage.html">&lt;button>Next Page&lt;/button>&lt;/a>
+    &lt;/body&gt;
+  &lt;/html&gt;
+                           </pre>
+                      </div>
+                        <p>
+                          Almost anything can be turned into a link if
+                          you put it inside an anchor tag.
+                        </p>
+                        <p>
+                          Definitely something that you should play
+                          around with.
+                        </p>
+                    </div>
+                </div>
+              </section>
+
+              <section id="section_CSS">
+                <a id="_CSS"><h2><codeG>CSS</codeG></h2></a>
+                <p>
+                  We’ve added text, images, and various other element tags. Yet, our pages still look a bit dull.
+                  CSS (Cascading Style Sheets) is used to change the look of your elements. This is done through
+                  colors, padding, margins, alignments, and more!
+                </p>
+                <a id="gettingstartedcss"><h2>Getting Started</h2></a>
+                <p>
+                  Just like everything else, our CSS file will be separate and linked onto the website. This is done
+                  so that the style can be reused between pages
+                </p>
+                <h3 class="paraTitle">Creating website folder </h3>
+                <div class="paraSection">
+                  <div class="para">
+                    <div class="fl">
+                      <p>
+                        In your projects folder, right click and create a
+                        new folder called “stylesheet”.
+                      </p>
+                    </div>
+                    <div class="fr">
+                      <div class="tutImageContainer">
+                        <img class="tutImage" src="examples/images/cssone.png" alt=""></img>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="para">
+                    <div class="fl">
+                      <p>
+                        In the folder “stylesheet”, create a new file
+                        called “stylesheet.css”.
+                      </p>
+                      <p>
+                        This will hold all of your style information
+                        throughout your entire site! Placing it in it’s
+                        own file will allow us to use it in every page
+                        (as you’ll see later).
+                      </p>
+                    </div>
+                    <div class="fr">
+                      <div class="tutImageContainer">
+                        <img class="tutImage" src="examples/images/csstwo.png" alt=""></img>
                       </div>
                     </div>
                   </div>
                 </div>
 
-
-                <a id="links"><h2>Links <code>&lt;a&gt;</code></h2></a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                <a id="secondpage"><h2>Second Page <code>&lt;a&gt;</code></h2></a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                <a id="button"><h2>Button <code>&lt;button&gt;</code></h2></a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </section>
-
-              <section id="section_CSS">
-                <a id="_CSS"><h2><codeG>CSS</codeG></h2></a>
-                <a id="gettingstartedcss"><h2>Getting Started</h2></a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat.
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <a id="thebasics"><h2>The Basics</h2></a>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                   consequat.
