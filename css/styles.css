@@ -296,6 +296,7 @@ article:after, article:before {
   padding-top: 8px
 }
 
+
 .nav-footer {
   background: #20232a;
   border: none;
@@ -434,7 +435,10 @@ footer.nav-footer {
   max-width: 500px;
   max-height: 500px;
 }
-
+.questionmark {
+  height: 15px;
+  width: 15px;
+}
 
 
 

@@ -4,8 +4,6 @@
 <head>
   <title>First Website!</title>
   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css"></script>
-  <link rel="stylesheet" href="../../css/styles.css">
-  <link rel="stylesheet" href="../../css/prettyPrint.css">
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
@@ -14,6 +12,8 @@
   <script type="text/javascript" src="../../js/toc.js"></script>
   <script type="text/javascript" src="../../js/question.js"></script>
   <script type="text/javascript" src="../../js/smoothscroll.js"></script>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../../css/prettyPrint.css">
 </head>
 
 <body class="sideNavVisible">
@@ -26,20 +26,17 @@
 
   <div class="navPusher">
     <div class="docMainWrapper wrapper">
-      <div class="container docsNavContainer" id="docsNav">
+      <div class="container docsNavContainer">
         <nav class="toc">
           <div class="toggleNav">
             <section class="navWrapper wrapper">
               <div class="navGroups">
-                <div class="navGroup"><a href="#top"><h3 class="navGroupCategoryTitle">Project 1</h3></a>
+                <div class="navGroup">
+                  <a href="#top"><h3 class="navGroupCategoryTitle">Project 1</h3></a>
                   <ul id="toc">
                     <progress id="pb" value="0" max="100"></progress>
-                    <li class="navListItem"><a class="navItem" href="#learninggoals">
-                        <codeG>Learning Goals</codeG>
-                      </a></li>
-                    <li class="navListItem"><a class="navItem" href="#_HTML">
-                        <codeG>&lt;HTML&gt;</codeG>
-                      </a></li>
+                    <li class="navListItem"><a class="navItem" href="#learninggoals"><codeG>Learning Goals</codeG></a></li>
+                    <li class="navListItem"><a class="navItem" href="#_HTML"><codeG>&lt;HTML&gt;</codeG></a></li>
                     <section id="TOC_HTML">
                       <li class="navListItem"><a class="navItem" href="#gettingstartedhtml">1. Getting Started</a></li>
                       <li class="navListItem"><a class="navItem" href="#files">2. Files</a></li>
@@ -47,9 +44,7 @@
                       <li class="navListItem"><a class="navItem" href="#helloworld">4. Hello World</a></li>
                       <li class="navListItem"><a class="navItem" href="#title">5. Title <code>&lt;h1&gt;</code></a></li>
                     </section>
-                    <li class="navListItem"><a class="navItem" href="#_BODY">
-                        <codeG>&lt;Body&gt;</codeG>
-                      </a></li>
+                    <li class="navListItem"><a class="navItem" href="#_BODY"><codeG>&lt;Body&gt;</codeG></a></li>
                     <section id="TOC_BODY">
                       <li class="navListItem"><a class="navItem" href="#headers">1. Headers <code>&lt;h1&gt;</code></a></li>
                       <li class="navListItem"><a class="navItem" href="#paragraphs">2. Paragraphs <code>&lt;p&gt;</code></a></li>
@@ -58,17 +53,13 @@
                       <li class="navListItem"><a class="navItem" href="#tables">5. Tables <code>&lt;table&gt;</code></a></li>
                       <li class="navListItem"><a class="navItem" href="#images">6. Images <code>&lt;image&gt;</code></a></li>
                     </section>
-                    <li class="navListItem"><a class="navItem" href="#_MULTIPAGES">
-                        <codeG>&lt;Multi Pages&gt;</codeG>
-                      </a></li>
+                    <li class="navListItem"><a class="navItem" href="#_MULTIPAGES"><codeG>&lt;Multi Pages&gt;</codeG></a></li>
                     <section id="TOC_MULTIPAGES">
                       <li class="navListItem"><a class="navItem" href="#links">1. Links <code>&lt;a&gt;</code></a></li>
                       <li class="navListItem"><a class="navItem" href="#secondpage">2. Second Page <code>&lt;a&gt;</code></a></li>
                       <li class="navListItem"><a class="navItem" href="#button">3. Button <code>&lt;button&gt;</code></a></li>
                     </section>
-                    <li class="navListItem"><a class="navItem" href="#_CSS">
-                        <codeG>&lt;CSS&gt;</codeG>
-                      </a></li>
+                    <li class="navListItem"><a class="navItem" href="#_CSS"><codeG>&lt;CSS&gt;</codeG></a></li>
                     <section id="TOC_CSS">
                       <li class="navListItem"><a class="navItem" href="#gettingstartedcss">1. Getting Started</a></li>
                       <li class="navListItem"><a class="navItem" href="#thebasics">2. The basics</a></li>
@@ -76,19 +67,13 @@
                       <li class="navListItem"><a class="navItem" href="#id">4. Id <code>#</code></a></li>
                       <li class="navListItem"><a class="navItem" href="#class">5. Class <code>.</code></a></li>
                     </section>
-                    <li class="navListItem"><a class="navItem" href="#_NAVBAR">
-                        <codeG>Navbar</codeG>
-                      </a></li>
+                    <li class="navListItem"><a class="navItem" href="#_NAVBAR"><codeG>Navbar</codeG></a></li>
                     <section id=TOC_NAVBAR>
                       <li class="navListItem"><a class="navItem" href="#navhtml">1. &lt;HTML&gt;</a></li>
                       <li class="navListItem"><a class="navItem" href="#navcss">2. &lt;CSS&gt;</a></li>
                     </section>
-                    <li class="navListItem"><a class="navItem" href="#requirements">
-                        <codeB>Requirements</codeB>
-                      </a></li>
-                    <li class="navListItem"><a class="navItem" href="#challenges">
-                        <codeR>Challenges</codeR>
-                      </a></li>
+                    <li class="navListItem"><a class="navItem" href="#requirements"><codeB>Requirements</codeB></a></li>
+                    <li class="navListItem"><a class="navItem" href="#challenges"><codeR>Challenges</codeR></a></li>
                   </ul>
                 </div>
               </div>
@@ -102,27 +87,18 @@
           <div class="post">
 
             <header class="postHeader">
-              <a class="edit-page-link button" href="https://www.GitHub.com/mm909" rel="noreferrer noopener">
-                GitHub
-              </a>
-              <h1 class="postHeaderTitle">
-                Introduction to Web Development
-              </h1>
+              <a class="edit-page-link button" href="https://www.GitHub.com/mm909" rel="noreferrer noopener">GitHub</a>
+              <h1 class="postHeaderTitle">Introduction to Web Development</h1>
             </header>
 
             <article id="mainContent">
-
               <p>
                 Welcome to your first web development project! In this project we will go through many aspects
                 of basic web development and how they work together to make a complete and pretty looking
                 website with many interactable features.
               </p>
 
-              <a id="learninggoals">
-                <h2>
-                  <codeG>Learning Goals</codeG>
-                </h2>
-              </a>
+              <a id="learninggoals"><h2><codeG>Learning Goals</codeG></h2></a>
               <ol>
                 <li>Good file structure for your website</li>
                 <ol>
@@ -141,41 +117,36 @@
                 <li>Multiple Pages</li>
                 <li>CSS Basics</li>
                 <ol>
-                  <li>stylesheet.css</li>
+                  <li>Stylesheet.css</li>
                   <li>Common element style</li>
                 </ol>
                 <li> Advanced CSS</li>
                 <ol>
-                  <li>CSS class VS. id</li>
+                  <li>CSS Class VS. ID</li>
                 </ol>
                 <li>Floating Top Menu</li>
               </ol>
 
               <section id="section_HTML">
-                <a id="_HTML">
-                  <h2>
-                    <codeG>HTML</codeG>
-                  </h2>
-                </a>
-                <a id="gettingstartedhtml">
-                  <h2>Getting Started</h2>
-                </a>
+                <a id="_HTML"><h2><codeG>HTML</codeG></h2></a>
+
+                <a id="gettingstartedhtml"><h2>Getting Started</h2></a>
                 <p>
                   You may have done some HTML and CSS in CodeCombat, but this is to show you what it looks
                   like when it’s not in a game.
-                </p>
-                <p>
+                  </br>
+                  </br>
                   The first important thing to keep in mind, is that you have to have a project folder
                   for your site.
                 </p>
-                <h3 class="paraTitle">Creating website folder </h3>
+                <h3 class="paraTitle">Creating website folder</h3>
                 <div class="paraSection">
                   <div class="para">
                     <div class="fl">
                       <p>
                         Find where you would like to place your project folder.
-                      </p>
-                      <p>
+                        </br>
+                        </br>
                         Right Click to open the context menu -> Hover over “New” -> Press on “Folder”.
                       </p>
                     </div>
@@ -189,9 +160,9 @@
                   <div class="para">
                     <div class="fl">
                       <p>
-                        Rename the folder to “firstwebsite”
-                      </p>
-                      <p>
+                        Rename the folder to <textB> “<i>firstwebsite</i>”.</textB>
+                        </br>
+                        </br>
                         This will be where you place all of your files for your website.
                       </p>
                     </div>
@@ -203,22 +174,19 @@
                   </div>
                 </div>
 
-                <a id="files">
-                  <h2>Files</h2>
-                </a>
+                <a id="files"><h2>Files</h2></a>
                 <p>
                   In any coding project, there is always that starting point where your
-                  project will go to first to run code. In websites, that’s called “index”.
+                  project will go to first to run code. In websites, that’s called "<i>index</i>."
                   The index file is the first page that should open if someone were to
                   go to your site.
                 </p>
-                <h3 class="paraTitle">Creating index.html file </h3>
-
+                <h3 class="paraTitle">Creating <i>index.html</i> file</h3>
                 <div class="paraSection">
                   <div class="para">
                     <div class="fl">
                       <p>
-                        Inside your “firstwebsite” folder, right click and create a new text file.
+                        Inside your “<i>firstwebsite</i>” folder, right click and create a new text file.
                       </p>
                     </div>
                     <div class="fr">
@@ -231,7 +199,7 @@
                   <div class="para">
                     <div class="fl">
                       <p>
-                        Rename the file to say “index.html”.
+                        Rename the file to say <textB> “<i>index.html</i>”.</textB>
                       </p>
                     </div>
                     <div class="fr">
@@ -242,21 +210,20 @@
                   </div>
                 </div>
 
-                <a id="howtoedit">
-                  <h2>How to edit</h2>
-                </a>
+                <a id="howtoedit"><h2>How to edit</h2></a>
                 <p>
                   Awesome! If you double click on that file, you should see that opens
                   a new page on your browser. You should also notice that page is blank…
                   That is because we have to add code to it.
                 </p>
-
                 <h3 class="paraTitle">Coding your webpage</h3>
                 <div class="paraSection">
                   <div class="para">
                     <div class="fl">
                       <p>
-                        Right click on your index file and select “Open with -> Choose another app”.
+                        Right click on your index file and select
+                        <br>
+                        “Open with -> Choose another app”.
                       </p>
                     </div>
                     <div class="fr">
@@ -269,9 +236,10 @@
                   <div class="para">
                     <div class="fl">
                       <p>
-                        Find “Sublime” and double click it.
-                      </p>
-                      <p>
+                        Find <textR>“Sublime”</textR> and double click it.
+                        </br>
+                        </br>
+                        <img class="questionmark" src="../questionmark.jpg" alt="">
                         If you’re having trouble finding it, ask an
                         instructor to help you (it won’t always show here).
                       </p>
@@ -283,11 +251,8 @@
                     </div>
                   </div>
                 </div>
-                <br>
 
-                <a id="helloworld">
-                  <h2>Hello World</h2>
-                </a>
+                <a id="helloworld"><h2>Hello World</h2></a>
                 <div class="paraSection">
                   <div class="para">
                     <div class="fl">
@@ -302,8 +267,7 @@
   &lt;body&gt;
     Hello, World!
   &lt;/body&gt;
-&lt;/html&gt;
-                         </pre>
+&lt;/html&gt;</pre>
                       </div>
                     </div>
                     <div class="fr">
@@ -314,7 +278,6 @@
                   </div>
                 </div>
                 <br>
-
                 <p>
                   The code on the image to the right is your standard HTML structure. <br>
                   <!DOCTYPE html> specifies you are using HTML5 (the latest version of HTML). <br>
@@ -322,12 +285,10 @@
                   <code>&lt;head>&lt;/head></code> code between these tags are your “meta” information <br>
                   <code>&lt;meta charset=”utf-8”></code> allows special characters not found on every keyboard. <br>
                   <code>&lt;body>&lt;/body></code> where your primary code goes. When you were doing CodeCombat, you were
-                  always in the &lt;body> tag.
+                  always in the <code>&lt;body></code> tag.
                 </p>
 
-                <a id="title">
-                  <h2>Title <code>&lt;title&gt;</code></h2>
-                </a>
+                <a id="title"><h2>Title <code>&lt;title&gt;</code></h2></a>
                 <p>
                   If you notice on your new page, it says “index.html”.
                   That is rather ugly and unprofessional, thankfully HTML has a quick fix for that.
@@ -347,8 +308,7 @@
   &lt;body&gt;
     Hello, World!
   &lt;/body&gt;
-&lt;/html&gt;
-                         </pre>
+&lt;/html&gt;</pre>
                       </div>
                     </div>
                     <div class="fr">
@@ -361,7 +321,7 @@
                 <br>
                 <p>
                   <code>&lt;title>&lt;/title></code> is an element that defines what you see on the
-                  browser tab. Notice (on the right image), that it now says “My Website!” instead of
+                  browser tab. Notice (on the right image), that it now says “<codeB>My Website!</codeB>” instead of
                   “index.html”
                 </p>
               </section>
@@ -1295,7 +1255,7 @@ p {
           <a href="#">Lorem</a>
         </div> -->
         <!-- <section class="copyright">Copyright © 2018 Facebook Inc. -->
-        </section>
+      </section>
     </footer>
   </div>
 </body>
