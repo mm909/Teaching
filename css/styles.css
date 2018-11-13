@@ -95,7 +95,6 @@ codeB {
   margin: 0;
   padding: 3.2px 6.4px
 }
-
 textR {
   background-color: rgba(255, 0, 0, .1);
   border-radius: 3px;
@@ -336,9 +335,7 @@ footer.nav-footer {
 .container {
   max-width: 900px
 }
-.container .wrapper h2 {
-  font-size: 31px
-}
+
 .big-button, li, p {
   font-size: 18px
 }
@@ -444,6 +441,37 @@ footer.nav-footer {
 .prettifyHTML {
   color: #ed5565;
   background-color: #2f3640;
+}
+.prettifyCSS {
+  background-color: #2f3640;
+  color: #90EE90;
+}
+.prettifyJS {
+  background-color: #2f3640;
+  color: #4fc1e9
+}
+.prettifyResult {
+  background-color: #2f3640;
+  color: #e6e9ed;
+}
+.codetab {
+  font-size: 20px;
+}
+
+.nav-link {
+  padding: 5px !important;
+}
+
+.resultBox {
+  background-color: #edf4f7;
+  width: 99%;
+  margin: auto;
+  padding-top: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  border-radius: 20px;
+
 }
 
 

@@ -6,6 +6,8 @@
   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
   <script type="text/javascript" src="../../js/scrolling.js"></script>
   <script type="text/javascript" src="../../js/progressbar.js"></script>
@@ -13,8 +15,9 @@
   <script type="text/javascript" src="../../js/question.js"></script>
   <script type="text/javascript" src="../../js/smoothscroll.js"></script>
   <!-- <script type="text/javascript" src="../../js/interact.js"></script> -->
-  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="../../css/prettyPrint.css">
+  <link rel="stylesheet" href="../../css/styles.css">
 </head>
 
 <body class="sideNavVisible">
@@ -98,6 +101,50 @@
                 of basic web development and how they work together to make a complete and pretty looking
                 website with many interactable features.
               </p>
+
+              <!-- <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#test1" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyHTML codetab">HTML</code></a>
+                  <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#test2" role="tab" aria-controls="nav-profile" aria-selected="false"><code class="prettifyCSS codetab">CSS</code></a>
+                  <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#test3" role="tab" aria-controls="nav-contact" aria-selected="false"><code class="prettifyJS codetab">JS</code></a>
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="test1" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <div class='CodeBoxL'>
+                    <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    Hello, World!
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="test2" role="tabpanel" aria-labelledby="nav-profile-tab">
+                  <div class='CodeBoxL'>
+                    <pre class="prettyprint linenums lang-css CodeBoxBuffer">
+body {
+  color: red;
+  background: orange;
+}</pre>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="test3" role="tabpanel" aria-labelledby="nav-contact-tab">
+                  <div class='CodeBoxL'>
+                    <pre class="prettyprint linenums lang-js CodeBoxBuffer">
+let cool = 100;
+let dev = true;
+if(1 == 0){
+  // Everything breakes
+}</pre>
+                  </div>
+                </div>
+              </div> -->
 
               <a id="learninggoals"><h2><codeG>Learning Goals</codeG></h2></a>
               <ol>
@@ -254,6 +301,7 @@
                 </div>
 
                 <a id="helloworld"><h2>Hello World</h2></a>
+                <h3 class="paraTitle">First steps</h3>
                 <div class="paraSection">
                   <div class="para">
                     <div class="fl">
@@ -280,7 +328,7 @@
                 </div>
                 <br>
                 <p>
-                  The code on the image to the right is your standard HTML structure. <br>
+                  The code on the left is your standard HTML structure. <br>
                   <!DOCTYPE html> specifies you are using HTML5 (the latest version of HTML). <br>
                   <code class="prettifyHTML">&lt;html>&lt;/html></code> code between here is HTML code (as opposed to CSS, Javascript, etc) <br>
                   <code class="prettifyHTML">&lt;head>&lt;/head></code> code between these tags are your “meta” information <br>
@@ -362,9 +410,17 @@
   &lt;/body&gt;
 &lt;/html&gt;</pre>
                   </div>
-                  <div class="tutImageContainer">
-                    <img class="tutImage" src="examples/images/headers.PNG"></img>
+                  <div>
+                    <h1>I am header 1, I am the biggest!</h1>
+                    <h2>I'm the second header, I'm a bit smaller</h2>
+                    <h3>I am number 3! Notice I'm even smaller?</h3>
+                    <h4>Why are we still shrinking???</h4>
+                    <h5>Can you even read this small???</h5>
+                    <h6>don't setp on me...</h6>
                   </div>
+                  <!-- <div class="tutImageContainer">
+                    <img class="tutImage" src="examples/images/headers.PNG"></img>
+                  </div> -->
                 </div>
                 <br>
                 <p>
@@ -501,10 +557,9 @@
                 <p>
                   <code class="prettifyHTML">&lt;li>&lt;/li></code> list item tags that go in between the ordered or unordered list.
                 </p>
-                <!-- ^ Cleaned -->
 
                 <a id="tables">
-                  <h2>Tables <code>&lt;table&gt;</code></h2>
+                  <h2>Tables <code class="prettifyHTML">&lt;table&gt;</code></h2>
                 </a>
                 <p>
                   This is a more outdated tag that is rarely used in practical use, however there are still occasions
@@ -512,9 +567,9 @@
                   that is clean and easy to read.
                 </p>
 
-                <h3 class="paraTitle">Table Element</h3>
+                <h3 class="paraTitle">Table Element <code class="prettifyHTML">&lt;table&gt;</code></h3>
                 <div class="paraSection">
-                  <div class='CodeBoxL '>
+                  <div class='CodeBoxL'>
                     <pre class="prettyprint linenums lang-html CodeBoxBuffer">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -550,38 +605,37 @@
 &lt;/html&gt;</pre>
                   </div>
                   <div class="tutImageContainer">
-                    <img class="tutImage" src="examples/images/table.PNG" alt=""></img>
+                    <img class="tutImage" src="examples/images/table.PNG"></img>
                   </div>
                 </div>
                 <br>
                 <p>
-                  <code>&lt;table>&lt;/table></code> creates your table the
-                  style=”width=100%”​ is CSS code that you
+                  <code class="prettifyHTML">&lt;table>&lt;/table></code> creates your table the
+                  <code>style=”width=100%”</code> is CSS code that you
                   don’t need to worry about until later in this
                   lesson.
                 </p>
                 <p>
-                  <code>&lt;tr>&lt;/tr></code> is the table row for your data.
+                  <code class="prettifyHTML">&lt;tr>&lt;/tr></code> is the table row for your data.
                 </p>
                 <p>
-                  <code>&lt;th>&lt;/th></code> is the table header, generally at the
+                  <code class="prettifyHTML">&lt;th>&lt;/th></code> is the table header, generally at the
                   top of your table to show what columns will
                   be in the table.
                 </p>
                 <p>
-                  <code>&lt;td>&lt;/td></code> is table data for regular records.
+                  <code class="prettifyHTML">&lt;td>&lt;/td></code> is table data for regular records.
                 </p>
 
                 <a id="images">
-                  <h2>Images <code>&lt;image&gt;</code></h2>
+                  <h2>Images <code class="prettifyHTML">&lt;image&gt;</code></h2>
                 </a>
                 <p>
                   Just text in a website can look rather boring,
                   so we’re going to spice it up by placing images into
                   the page.
                 </p>
-
-                <h3 class="paraTitle">Image element</h3>
+                <h3 class="paraTitle">Image element <code class="prettifyHTML">&lt;image&gt;</code></h3>
                 <div class="paraSection">
                   <div class="para">
                     <div class="fl">
@@ -653,12 +707,12 @@
                 </div>
                 <br>
                 <p>
-                  <code> &lt;image></code> tag allows you to import images in your website. Notice that the src is equal to
+                  <code class="prettifyHTML"> &lt;image></code> tag allows you to import images in your website. Notice that the src is equal to
                   “images/walle.jpg”? This is because that the image is stored in a sub-folder of what is called
                   the “root” folder.
                 </p>
               </section>
-
+              <!-- ^ Cleaned -->
               <section id="section_MULTIPAGES">
                 <a id="_MULTIPAGES">
                   <h2>
@@ -956,8 +1010,49 @@ p {
                   “class”. They are both very similar, the difference is that “id” is meant for one element while
                   “class” is for multiple.
                 </p>
-
-                <div class="paraSection">
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-test1" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyHTML codetab">HTML</code></a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#-test2" role="tab" aria-controls="nav-profile" aria-selected="false"><code class="prettifyCSS codetab">CSS</code></a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#-test3" role="tab" aria-controls="nav-profile" aria-selected="false"><code class="prettifyResult codetab">Result</code></a>
+                  </div>
+                </nav>
+                <br>
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="-test1" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;link rel="stylesheet" type="text/css" href="stylesheet/stylesheet.css">
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My Website!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;p id="para1"> Hello World! &lt;/p>
+  &lt;p>This paragraph is not affected by the style.&lt;/p>
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="-test2" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-css CodeBoxBuffer">
+#para1 {
+  text-align: center;
+  color: red;
+} </pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="-test3" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class="resultBox">
+                      <p style="text-align:center;color:red;">Hello World</p>
+                      <p>This paragraph is not affected by the style.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="paraSection">
                   <div class='CodeBoxL'>
                     <pre class="prettyprint linenums lang-html CodeBoxBuffer">
 &lt;!DOCTYPE html&gt;
@@ -989,7 +1084,8 @@ p {
                         <img class="tutImage" src="examples/images/advancedcss.PNG" alt=""></img>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
+                  <br>
                   <p>
                     <i>
                       Notice how they’re both <code>&lt;p>&lt;/p></code> tags? But
