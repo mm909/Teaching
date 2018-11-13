@@ -95,6 +95,7 @@ codeB {
   margin: 0;
   padding: 3.2px 6.4px
 }
+
 textR {
   background-color: rgba(255, 0, 0, .1);
   border-radius: 3px;
@@ -439,6 +440,12 @@ footer.nav-footer {
   height: 15px;
   width: 15px;
 }
+
+.prettifyHTML {
+  color: #ed5565;
+  background-color: #2f3640;
+}
+
 
 /* .interact * {
   margin: 0px;
