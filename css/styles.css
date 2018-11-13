@@ -440,9 +440,9 @@ footer.nav-footer {
   width: 15px;
 }
 
-.interact * {
+/* .interact * {
   margin: 0px;
-  /* font-weight: normal; */
+  font-weight: normal;
 }
 .interact p {
   font-size: 1em;
@@ -454,7 +454,7 @@ footer.nav-footer {
 .interactContainer {
   background-color: rgba(0, 0, 250, .1);
   text-align: center;
-}
+} */
 
 
 
