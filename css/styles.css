@@ -440,7 +440,21 @@ footer.nav-footer {
   width: 15px;
 }
 
-
+.interact * {
+  margin: 0px;
+  /* font-weight: normal; */
+}
+.interact p {
+  font-size: 1em;
+}
+.interact {
+  font-size: 1em;
+  padding: 5px;
+}
+.interactContainer {
+  background-color: rgba(0, 0, 250, .1);
+  text-align: center;
+}
 
 
 
