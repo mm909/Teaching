@@ -1070,7 +1070,6 @@ if(1 == 0){
                 </p>
               </section>
 
-              <!-- ^ Cleaned -->
               <section id="section_CSS">
                 <a id="_CSS">
                   <h2>
@@ -1131,12 +1130,62 @@ if(1 == 0){
                 </a>
                 <p>There are so many uses for CSS, the basic of which is text alignment, size, and color</p>
                 <h3 class="paraTitle">Creating CSS file</h3>
+                <p>
+                  Open the stylesheet.css file and add the
+                  following code…
+                </p>
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-contact-tab" data-toggle="tab" href="#-css10" role="tab" aria-controls="nav-contact" aria-selected="false"><code class="prettifyCSS codetab">CSS</code></a>
+                    <!-- <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-html10" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyHTML codetab">HTML</code></a> -->
+                    <!-- <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#-result10" role="tab" aria-controls="nav-contact" aria-selected="false"><code class="prettifyResult codetab">Result</code></a> -->
+                  </div>
+                </nav>
+                <br>
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="-css10" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-css CodeBoxBuffer">
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+}</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-html10" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My Website!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1>Come to our site&lt;/h1>
+    &lt;a href="newpage.html">&lt;button>Next Page&lt;/button>&lt;/a>
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="-result10" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="resultBox">
+                      <h1>Come to our site</h1>
+                      <a href="newpage.html"><button>Next Page</button></a>
+                    </div>
+                  </div>
+                </div>
                 <div class="paraSection">
                   <div class="para">
-                    <p>
-                      Open the stylesheet.css file and add the
-                      following code…
-                    </p>
+
                     <p>
                       Body: Is where most of your code is placed in
                       your HTML file (remember the
@@ -1154,8 +1203,24 @@ if(1 == 0){
                       being changed from what you selected.
                     </p>
                   </div>
-                  <div class='CodeBoxL'>
-                    <pre class="prettyprint linenums lang-css CodeBoxBuffer">
+                </div>
+                <br>
+
+                <a id="connectingthetwo">
+                  <h2>Connecting the two <code class="prettifyHTML">&lt;link&gt;</code></h2>
+                </a>
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-html11" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyHTML codetab">HTML</code></a>
+                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#-css11" role="tab" aria-controls="nav-contact" aria-selected="false"><code class="prettifyCSS codetab">CSS</code></a>
+                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#-result11" role="tab" aria-controls="nav-contact" aria-selected="false"><code class="prettifyResult codetab">Result</code></a>
+                  </div>
+                </nav>
+                <br>
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show" id="-css11" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-css CodeBoxBuffer">
 body {
   background-color: lightblue;
 }
@@ -1167,96 +1232,60 @@ h1 {
 
 p {
   font-size: 20px;
-}
-                    </pre>
-                  </div>
-                </div>
-
-                <a id="connectingthetwo">
-                  <h2>Connecting the two <code>&lt;link&gt;</code></h2>
-                </a>
-                <div class="paraSection">
-                  <div class='CodeBoxL'>
-                    <pre class="prettyprint linenums lang-html CodeBoxBuffer">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-  &lt;link rel="stylesheet" type="text/css" href="stylesheet/stylesheet.css">
-    &lt;meta charset="utf-8"&gt;
-    &lt;title&gt;My Website!&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-  &lt;h1>Come to our site&lt;/h1>
-  &lt;a href="newpage.html">&lt;button>Next Page&lt;/button>&lt;/a>
-  &lt;/body&gt;
-&lt;/html&gt;
-                    </pre>
-                  </div>
-                  <div class="para">
-                    <div class="tutImageContainer">
-                      <img class="tutImage" src="examples/images/cssstart.PNG" alt=""></img>
+}</pre>
                     </div>
                   </div>
-                  <p>
-                    The
-                    &lt;link> tag imports external files into our file to be used. In this case, it gives this file the
-                    CSS style. Notice how different it looks?
-                  </p>
-                </div>
-
-                <a id="id">
-                  <h2>Id <code>#</code></h2>
-                </a>
-                <p>
-                  Beyond selecting rules for elements, you can also select specific elements by either “id” or
-                  “class”. They are both very similar, the difference is that “id” is meant for one element while
-                  “class” is for multiple.
-                </p>
-                <nav>
-                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-test1" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyHTML codetab">HTML</code></a>
-                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#-test2" role="tab" aria-controls="nav-profile" aria-selected="false"><code class="prettifyCSS codetab">CSS</code></a>
-                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#-test3" role="tab" aria-controls="nav-profile" aria-selected="false"><code class="prettifyResult codetab">Result</code></a>
-                  </div>
-                </nav>
-                <br>
-                <div class="tab-content" id="nav-tabContent">
-                  <div class="tab-pane fade show active" id="-test1" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <div class="tab-pane fade show active" id="-html11" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class='CodeBoxL'>
                       <pre class="prettyprint linenums lang-html CodeBoxBuffer">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
-  &lt;link rel="stylesheet" type="text/css" href="stylesheet/stylesheet.css">
+    &lt;link rel="stylesheet" type="text/css" href="stylesheet/stylesheet.css">
     &lt;meta charset="utf-8"&gt;
     &lt;title&gt;My Website!&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
-  &lt;p id="para1"> Hello World! &lt;/p>
-  &lt;p>This paragraph is not affected by the style.&lt;/p>
+    &lt;h1>Come to our site&lt;/h1>
+    &lt;a href="newpage.html">&lt;button>Next Page&lt;/button>&lt;/a>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
                     </div>
                   </div>
-                  <div class="tab-pane fade" id="-test2" role="tabpanel" aria-labelledby="nav-profile-tab">
-                    <div class='CodeBoxL'>
-                      <pre class="prettyprint linenums lang-css CodeBoxBuffer">
-#para1 {
-  text-align: center;
-  color: red;
-} </pre>
-                    </div>
-                  </div>
-                  <div class="tab-pane fade" id="-test3" role="tabpanel" aria-labelledby="nav-profile-tab">
-                    <div class="resultBox">
-                      <p style="text-align:center;color:red;">Hello World</p>
-                      <p>This paragraph is not affected by the style.</p>
+                  <div class="tab-pane fade" id="-result11" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="resultBox" style="background-color:lightblue;">
+                      <h1 style="color:white;text-align:center;">Come to our site</h1>
+                      <a href="newpage.html" style="font-size:20px;"><button>Next Page</button></a>
                     </div>
                   </div>
                 </div>
-                <!-- <div class="paraSection">
-                  <div class='CodeBoxL'>
-                    <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+                <p>
+                  The
+                  <code class="prettifyHTML">&lt;link></code> tag imports external files into our file to be used. In this case, it gives this file the
+                  CSS style. Notice how different it looks?
+                </p>
+          </div>
+
+          <a id="id">
+            <h2>Id <code class="prettifyCSS">#</code></h2>
+          </a>
+          <p>
+            Beyond selecting rules for elements, you can also select specific elements by either “id” or
+            “class”. They are both very similar, the difference is that “id” is meant for one element while
+            “class” is for multiple.
+          </p>
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-html12" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyHTML codetab">HTML</code></a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#-css12" role="tab" aria-controls="nav-profile" aria-selected="false"><code class="prettifyCSS codetab">CSS</code></a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#-result12" role="tab" aria-controls="nav-profile" aria-selected="false"><code class="prettifyResult codetab">Result</code></a>
+            </div>
+          </nav>
+          <br>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="-html12" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div class='CodeBoxL'>
+                <pre class="prettyprint linenums lang-html CodeBoxBuffer">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -1265,49 +1294,57 @@ p {
     &lt;title&gt;My Website!&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
-  &lt;p id="para1"> Hello World! &lt;/p>
+  &lt;p id="para1"> Hello World! &lt;/p> &lt;!-- Add this line! -->
   &lt;p>This paragraph is not affected by the style.&lt;/p>
   &lt;/body&gt;
-&lt;/html&gt;
-                    </pre>
-                  </div>
-                  <div class="para">
-                    <div class="fl">
-                      <div class='CodeBoxL'>
-                        <pre class="prettyprint linenums lang-css CodeBoxBuffer">
+&lt;/html&gt;</pre>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="-css12" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div class='CodeBoxL'>
+                <pre class="prettyprint linenums lang-css CodeBoxBuffer">
 #para1 {
   text-align: center;
   color: red;
-}                       </pre>
-                      </div>
-                    </div>
-                    <div class="fr">
-                      <div class="tutImageContainer">
-                        <img class="tutImage" src="examples/images/advancedcss.PNG" alt=""></img>
-                      </div>
-                    </div>
-                  </div> -->
-                <br>
-                <p>
-                  <i>
-                    Notice how they’re both <code>&lt;p>&lt;/p></code> tags? But
-                    only one is changed, that’s why we have “id”
-                    properties?
-                  </i>
-                </p>
-                <p>
-                  “id” elements are accessed by “#” in front of them in the CSS file.
-                </p>
+} </pre>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="-result12" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div class="resultBox">
+                <p style="text-align:center;color:red;">Hello World</p>
+                <p>This paragraph is not affected by the style.</p>
+              </div>
+            </div>
           </div>
-
-          <a id="class">
-            <h2>Class <code>.</code></h2>
-          </a>
+          <br>
           <p>
-            You’ve done “id” for one element, now to see class affect multiple elements.
+            <i>
+              Notice how they’re both <code class="prettifyHTML">&lt;p>&lt;/p></code> tags? But
+              only one is changed, that’s why we have “id”
+              properties?
+            </i>
           </p>
+          <p>
+            “id” elements are accessed by “#” in front of them in the CSS file.
+          </p>
+        </div>
 
-          <div class="paraSection">
+        <a id="class">
+          <h2>Class <code class="prettifyCSS">.</code></h2>
+        </a>
+        <p>
+          You’ve done “id” for one element, now to see class affect multiple elements.
+        </p>
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-html13" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyHTML codetab">HTML</code></a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#-css13" role="tab" aria-controls="nav-profile" aria-selected="false"><code class="prettifyCSS codetab">CSS</code></a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#-result13" role="tab" aria-controls="nav-profile" aria-selected="false"><code class="prettifyResult codetab">Result</code></a>
+          </div>
+        </nav>
+        <br>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="-html13" role="tabpanel" aria-labelledby="nav-home-tab">
             <div class='CodeBoxL'>
               <pre class="prettyprint linenums lang-html CodeBoxBuffer">
 &lt;!DOCTYPE html&gt;
@@ -1321,62 +1358,68 @@ p {
   &lt;h1 class="center">Red and center-aligned heading&lt;/h1>
   &lt;p class="center">Red and center-aligned heading&lt;/p>
   &lt;/body&gt;
-&lt;/html&gt;
-                    </pre>
+&lt;/html&gt;</pre>
             </div>
-            <div class="para">
-              <div class="fl">
-                <div class='CodeBoxL'>
-                  <pre class="prettyprint linenums lang-css CodeBoxBuffer">
+          </div>
+          <div class="tab-pane fade" id="-css13" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class='CodeBoxL'>
+              <pre class="prettyprint linenums lang-css CodeBoxBuffer">
 .center {
   text-align: center;
   color: red;
-}                       </pre>
-                </div>
-              </div>
-              <div class="fr">
-                <div class="tutImageContainer">
-                  <img class="tutImage" src="examples/images/advancedcss.PNG" alt=""></img>
-                </div>
-              </div>
+} </pre>
             </div>
-            <p>
-              <i>
-                Both different elements (one an h1, and the
-                other a p tag) yet they are both now changed.
-              </i>
-            </p>
-            <p>
-              To change the rule of a “class”, put a period (.) before the class name in your CSS rule.
-            </p>
           </div>
-          <br>
+          <div class="tab-pane fade" id="-result13" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class="resultBox">
+              <h1 style="text-align:center;color:red;">Red and center-aligned heading</h1>
+              <p style="text-align:center;color:red;">Red and center-aligned heading</p>
+            </div>
+          </div>
+        </div>
+        <div class="paraSection">
           <p>
-            There are so many ways to alter CSS, go to <a href="https://www.w3schools.com/css/default.asp"><u>here</u></a> for many
-            more things that you can do with CSS.
+            <i>
+              Both different elements (one an h1, and the
+              other a p tag) yet they are both now changed.
+            </i>
           </p>
-          </section>
+          <p>
+            To change the rule of a “class”, put a period (.) before the class name in your CSS rule.
+          </p>
+        </div>
+        <br>
+        <p>
+          There are so many ways to alter CSS, go to <a href="https://www.w3schools.com/css/default.asp"><u>here</u></a> for many
+          more things that you can do with CSS.
+        </p>
+        </section>
 
-          <section id="section_NAVBAR">
-            <a id="_NAVBAR">
-              <h2>
-                <codeG>Navbar</codeG>
-              </h2>
-            </a>
-            <p>
-              Final thing to do before we finish this lesson and get into the project, is do a quick tutorial on
-              how to make a basic floating header.
-            </p>
-            <p>
-              Almost every website you go to has a header, they provide the name of the site as well as
-              navigational links to take you to other places on the site. The best headers are the ones that
-              follow you as you scroll down the page.
-            </p>
-            <a id="navhtml">
-              <h2>&lt;HTML&gt;</h2>
-            </a>
-            <div class="paraSection">
-              <div class="CodeBoxL">
+        <section id="section_NAVBAR">
+          <a id="_NAVBAR">
+            <h2>
+              <codeG>Navbar</codeG>
+            </h2>
+          </a>
+          <p>
+            Final thing to do before we finish this lesson and get into the project, is do a quick tutorial on
+            how to make a basic floating header.
+          </p>
+          <p>
+            Almost every website you go to has a header, they provide the name of the site as well as
+            navigational links to take you to other places on the site. The best headers are the ones that
+            follow you as you scroll down the page.
+          </p>
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-html14" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyHTML codetab">HTML</code></a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#-css14" role="tab" aria-controls="nav-profile" aria-selected="false"><code class="prettifyCSS codetab">CSS</code></a>
+            </div>
+          </nav>
+          <br>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="-html14" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div class='CodeBoxL'>
                 <pre class="prettyprint linenums lang-html CodeBoxBuffer">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1423,15 +1466,11 @@ p {
     &lt;/div>
 
   &lt;/body&gt;
-&lt;/html&gt;
-</pre>
+&lt;/html&gt;</pre>
               </div>
             </div>
-            <a id="navcss">
-              <h2>&lt;CSS&gt;</h2>
-            </a>
-            <div class="paraSection">
-              <div class="CodeBoxL">
+            <div class="tab-pane fade" id="-css14" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div class='CodeBoxL'>
                 <pre class="prettyprint linenums lang-css CodeBoxBuffer">
 .navbar {
   overflow: hidden;
@@ -1524,12 +1563,12 @@ p {
               </h2>
             </a>
             <p>None yet!</p>
-          </section>
-          </article>
-        </div>
-        <!-- <div class="docs-prevnext"><a class="docs-prev button" href="#">← Lorem</a><a class="docs-next button" href="#">Ipsum →</a></div> -->
+        </section>
+        </article>
       </div>
+      <!-- <div class="docs-prevnext"><a class="docs-prev button" href="#">← Lorem</a><a class="docs-next button" href="#">Ipsum →</a></div> -->
     </div>
+  </div>
   </div>
 
   <footer class="nav-footer" id="footer">
@@ -1546,10 +1585,9 @@ p {
           <h5><a href="#">Lorem</a></h5>
           <a href="#">Lorem</a>
         </div> -->
-      <!-- <section class="copyright">Copyright © 2018 Facebook Inc. -->
+      <!-- <section class="copyright"> -->
     </section>
   </footer>
   </div>
 </body>
-
 </html>
