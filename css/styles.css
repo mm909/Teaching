@@ -454,6 +454,10 @@ footer.nav-footer {
   background-color: #2f3640;
   color: #e6e9ed;
 }
+.prettifyPurple {
+  background-color: #2f3640;
+  color: #ac92ec;
+}
 .codetab {
   font-size: 20px;
 }
@@ -471,9 +475,13 @@ footer.nav-footer {
   padding-right: 25px;
   padding-bottom: 15px;
   border-radius: 20px;
-
+  margin-bottom: 1em;
 }
-
+.resultBoxImageContainer {
+  text-align: center;
+  margin: auto;
+  width: 500px;
+}
 
 /* .interact * {
   margin: 0px;
