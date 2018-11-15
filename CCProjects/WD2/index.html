@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Implementing Javascript</title>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+  <script type="text/javascript" src="../../js/scrolling.js"></script>
+  <script type="text/javascript" src="../../js/progressbar.js"></script>
+  <script type="text/javascript" src="../../js/toc.js"></script>
+  <script type="text/javascript" src="../../js/question.js"></script>
+  <script type="text/javascript" src="../../js/smoothscroll.js"></script>
+  <!-- <script type="text/javascript" src="../../js/interact.js"></script> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/prettyPrint.css">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body class="sideNavVisible">
+
+  <div class="fixedHeaderContainer">
+    <div class="wrapper">
+      <a href="https://portal.mycodecentral.com/my/" target="_self"><img src="../logo.png" alt="Code Central"></a>
+    </div>
+  </div>
+
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <div class="container docsNavContainer">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navGroups">
+                <div class="navGroup">
+                  <a href="#top">
+                    <h3 class="navGroupCategoryTitle">Project 1</h3>
+                  </a>
+                  <ul id="toc">
+                    <progress id="pb" value="0" max="100"></progress>
+                    <li class="navListItem"><a class="navItem" href="#learninggoals">
+                        <codeG>&lt;Learning Goals></codeG>
+                      </a></li>
+                    <li class="navListItem"><a class="navItem" href="#_HTML">
+                        <codeG>&lt;HTML&gt;</codeG>
+                      </a></li>
+                    <section id="TOC_HTML">
+                      <li class="navListItem"><a class="navItem" href="#gettingstartedhtml">1. Getting Started</a></li>
+                      <li class="navListItem"><a class="navItem" href="#files">2. Files</a></li>
+                      <li class="navListItem"><a class="navItem" href="#howtoedit">3. How to edit</a></li>
+                      <li class="navListItem"><a class="navItem" href="#helloworld">4. Hello World</a></li>
+                      <li class="navListItem"><a class="navItem" href="#title">5. Title <code>&lt;h1&gt;</code></a></li>
+                    </section>
+                    <li class="navListItem"><a class="navItem" href="#_BODY">
+                        <codeG>&lt;Body&gt;</codeG>
+                      </a></li>
+                    <section id="TOC_BODY">
+                      <li class="navListItem"><a class="navItem" href="#headers">1. Headers <code>&lt;h1&gt;</code></a></li>
+                      <li class="navListItem"><a class="navItem" href="#paragraphs">2. Paragraphs <code>&lt;p&gt;</code></a></li>
+                      <li class="navListItem"><a class="navItem" href="#bolditalicunderline">3. <strong>Bold</strong>, <i>Italic</i>, <u>Underline</u> </a></li>
+                      <li class="navListItem"><a class="navItem" href="#lists">4. Lists <code>&lt;ol&gt;</code></a></li>
+                      <li class="navListItem"><a class="navItem" href="#tables">5. Tables <code>&lt;table&gt;</code></a></li>
+                      <li class="navListItem"><a class="navItem" href="#images">6. Images <code>&lt;image&gt;</code></a></li>
+                    </section>
+                    <li class="navListItem"><a class="navItem" href="#_MULTIPAGES">
+                        <codeG>&lt;Multi Pages&gt;</codeG>
+                      </a></li>
+                    <section id="TOC_MULTIPAGES">
+                      <li class="navListItem"><a class="navItem" href="#links">1. Links <code>&lt;a&gt;</code></a></li>
+                      <li class="navListItem"><a class="navItem" href="#secondpage">2. Second Page <code>&lt;a&gt;</code></a></li>
+                      <li class="navListItem"><a class="navItem" href="#button">3. Button <code>&lt;button&gt;</code></a></li>
+                    </section>
+                    <li class="navListItem"><a class="navItem" href="#_CSS">
+                        <codeG>&lt;CSS&gt;</codeG>
+                      </a></li>
+                    <section id="TOC_CSS">
+                      <li class="navListItem"><a class="navItem" href="#gettingstartedcss">1. Getting Started</a></li>
+                      <li class="navListItem"><a class="navItem" href="#thebasics">2. The basics</a></li>
+                      <li class="navListItem"><a class="navItem" href="#connectingthetwo">3. Connecting the two <code>&lt;link&gt;</code></a></li>
+                      <li class="navListItem"><a class="navItem" href="#id">4. Id <code>#</code></a></li>
+                      <li class="navListItem"><a class="navItem" href="#class">5. Class <code>.</code></a></li>
+                    </section>
+                    <li class="navListItem"><a class="navItem" href="#_NAVBAR">
+                        <codeG>&lt;nav></codeG>
+                      </a></li>
+                    <section id=TOC_NAVBAR>
+                    </section>
+                    <li class="navListItem"><a class="navItem" href="#requirements">
+                        <codeB>Requirements</codeB>
+                      </a></li>
+                    <li class="navListItem"><a class="navItem" href="#challenges">
+                        <codeR>Challenges</codeR>
+                      </a></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+        </nav>
+      </div>
+
+      <div class="container mainContainer" id="top">
+        <div class="wrapper">
+          <div class="post">
+
+            <header class="postHeader">
+              <!-- <a class="edit-page-link button" href="https://www.GitHub.com/mm909" rel="noreferrer noopener">GitHub</a> -->
+              <h1 class="postHeaderTitle">Implementing Javascript</h1>
+            </header>
+
+            <article id="mainContent">
+
+        </article>
+      </div>
+      <!-- <div class="docs-prevnext"><a class="docs-prev button" href="#">← Lorem</a><a class="docs-next button" href="#">Ipsum →</a></div> -->
+    </div>
+  </div>
+  </div>
+
+  <footer class="nav-footer" id="footer">
+    <section class="sitemap">
+      <!-- <div>
+          <h5><a href="#">Lorem</a></h5>
+          <a href="#">Lorem</a>
+        </div>
+        <div>
+          <h5><a href="#">Lorem</a></h5>
+          <a href="#">Lorem</a>
+        </div>
+        <div>
+          <h5><a href="#">Lorem</a></h5>
+          <a href="#">Lorem</a>
+        </div> -->
+      <!-- <section class="copyright"> -->
+    </section>
+  </footer>
+  </div>
+</body>
+</html>
