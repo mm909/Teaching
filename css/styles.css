@@ -562,3 +562,11 @@ textB {
   user-select: none;
   /* Non-prefixed version, currently supported by Chrome and Opera */
 }
+
+
+@media only screen and (max-width: 1000px) {
+  .docsNavContainer {
+    display: none;
+  }
+}
+/* EOF */
