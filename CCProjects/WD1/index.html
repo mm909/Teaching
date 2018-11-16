@@ -14,7 +14,6 @@
   <script type="text/javascript" src="../../js/toc.js"></script>
   <script type="text/javascript" src="../../js/question.js"></script>
   <script type="text/javascript" src="../../js/smoothscroll.js"></script>
-  <!-- <script type="text/javascript" src="../../js/interact.js"></script> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="../../css/prettyPrint.css">
   <link rel="stylesheet" href="../../css/styles.css">
@@ -828,14 +827,14 @@
                       <h1>Time to add an image</h1>
                       <img src="images/walle.jpg">
                     </div>
+                    </div>
                   </div>
-                </div>
-                <br>
-                <p>
-                  <code class="prettifyHTML"> &lt;image></code> tag allows you to import images in your website. Notice that the src is equal to
-                  “images/walle.jpg”? This is because that the image is stored in a sub-folder of what is called
-                  the “root” folder.
-                </p>
+                  <br>
+                  <p>
+                    <code class="prettifyHTML"> &lt;image></code> tag allows you to import images in your website. Notice that the src is equal to
+                    “images/walle.jpg”? This is because that the image is stored in a sub-folder of what is called
+                    the “root” folder.
+                  </p>
               </section>
               <section id="section_MULTIPAGES">
                 <a id="_MULTIPAGES">
@@ -912,28 +911,28 @@
                   </div>
                   <br>
                 </div>
-                <br>
-                <p>
-                  Edit the newpage with the same rules as the
-                  other page, (
-                  <!DOCTYPE>, etc).
-                </p>
-                <p>
-                  Edit the index.html page to include an anchor
-                  (&lt;a>&lt;/a>) tag with an href to
-                  “newpage.html”
-                </p>
-                <nav>
-                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-firstPage" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyResult codetab">index.html</code></a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#-secondPage" role="tab" aria-controls="nav-contact" aria-selected="false"><code class="prettifyResult codetab">newpage.html</code></a>
-                  </div>
-                </nav>
-                <br>
-                <div class="tab-content" id="nav-tabContent">
-                  <div class="tab-pane fade show active" id="-firstPage" role="tabpanel" aria-labelledby="nav-contact-tab">
-                    <div class='CodeBoxL'>
-                      <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+                  <br>
+                  <p>
+                    Edit the newpage with the same rules as the
+                    other page, (
+                    <!DOCTYPE>, etc).
+                  </p>
+                  <p>
+                    Edit the index.html page to include an anchor
+                    (&lt;a>&lt;/a>) tag with an href to
+                    “newpage.html”
+                  </p>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-firstPage" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyResult codetab">index.html</code></a>
+                      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#-secondPage" role="tab" aria-controls="nav-contact" aria-selected="false"><code class="prettifyResult codetab">newpage.html</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-firstPage" role="tabpanel" aria-labelledby="nav-contact-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-html CodeBoxBuffer">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -946,11 +945,11 @@
     word to go to another page.&lt;/p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
+                      </div>
                     </div>
-                  </div>
-                  <div class="tab-pane fade" id="-secondPage" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <div class='CodeBoxL'>
-                      <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+                    <div class="tab-pane fade" id="-secondPage" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-html CodeBoxBuffer">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -962,32 +961,32 @@
     &lt;p>It's different than where you came from!&lt;/p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <p>
-                  If you open index.html and click on the new
-                  link, it should move you to the next page. Did
-                  it?
-                </p>
+                  <p>
+                    If you open index.html and click on the new
+                    link, it should move you to the next page. Did
+                    it?
+                  </p>
 
-                <a id="button">
+                  <a id="button">
                   <h2>Button <code class="prettifyHTML">&lt;button&gt;</code></h2>
                 </a>
-                <p>Sometimes an <code class="prettifyHTML"> &lt;a></code> tag seems a bit plain, that is when it can be useful to use a button instead.</p>
-                <h3 class="paraTitle"><code class="prettifyHTML">&lt;button&gt;</code> with anchor </h3>
+                  <p>Sometimes an <code class="prettifyHTML"> &lt;a></code> tag seems a bit plain, that is when it can be useful to use a button instead.</p>
+                  <h3 class="paraTitle"><code class="prettifyHTML">&lt;button&gt;</code> with anchor </h3>
 
-                <nav>
-                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-html9" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyHTML codetab">HTML</code></a>
-                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#-result9" role="tab" aria-controls="nav-contact" aria-selected="false"><code class="prettifyResult codetab">Result</code></a>
-                  </div>
-                </nav>
-                <br>
-                <div class="tab-content" id="nav-tabContent">
-                  <div class="tab-pane fade show active" id="-html9" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <div class='CodeBoxL'>
-                      <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-html9" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyHTML codetab">HTML</code></a>
+                      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#-result9" role="tab" aria-controls="nav-contact" aria-selected="false"><code class="prettifyResult codetab">Result</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-html9" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-html CodeBoxBuffer">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
@@ -999,23 +998,23 @@
   &lt;a href="newpage.html">&lt;button>Next Page&lt;/button>&lt;/a>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="-result9" role="tabpanel" aria-labelledby="nav-contact-tab">
+                      <div class="resultBox">
+                        <h1>Come to our site</h1>
+                        <a href="newpage.html"><button>Next Page</button></a>
+                      </div>
                     </div>
                   </div>
-                  <div class="tab-pane fade" id="-result9" role="tabpanel" aria-labelledby="nav-contact-tab">
-                    <div class="resultBox">
-                      <h1>Come to our site</h1>
-                      <a href="newpage.html"><button>Next Page</button></a>
-                    </div>
-                  </div>
-                </div>
-                <p>
-                  Almost anything can be turned into a link if
-                  you put it inside an anchor tag.
-                </p>
-                <p>
-                  Definitely something that you should play
-                  around with.
-                </p>
+                  <p>
+                    Almost anything can be turned into a link if
+                    you put it inside an anchor tag.
+                  </p>
+                  <p>
+                    Definitely something that you should play
+                    around with.
+                  </p>
               </section>
 
               <section id="section_CSS">
@@ -1514,4 +1513,5 @@ p {
   </footer>
   </div>
 </body>
+
 </html>

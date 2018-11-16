@@ -11,7 +11,7 @@ jQuery(document).ready(function() {
         location.hostname == this.hostname
       ) {
         // Figure out element to scroll to
-        console.log(this.hash[1]);
+        // console.log(this.hash[1]);
         if (this.hash[1] != '-') {
           var target = $(this.hash);
           target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
