@@ -12,6 +12,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+  <script type="text/javascript" src="../../js/buildTOC.js"></script>
   <script type="text/javascript" src="../../js/scrolling.js"></script>
   <script type="text/javascript" src="../../js/progressbar.js"></script>
   <script type="text/javascript" src="../../js/toc.js"></script>
@@ -46,34 +47,7 @@
                     <li class="navListItem"><a class="navItem" href="#learninggoals">
                         <codeG>&lt;Learning Goals></codeG>
                       </a></li>
-
-                    <li class="navListItem"><a class="navItem" href="#_JSIYWS">
-                        <codeG>JS in your website</codeG>
-                      </a></li>
-                    <section id="TOC_JSIYWS">
-                      <li class="navListItem"><a class="navItem" href="#AST">Adding <code class="prettifyJS">&lt;script></code> tags</a></li>
-                    </section>
-
-                    <li class="navListItem"><a class="navItem" href="#_HANDLINGEVENTS">
-                        <codeG>Handling Events</codeG>
-                      </a></li>
-                    <section id="TOC_HANDLINGEVENTS">
-                      <li class="navListItem"><a class="navItem" href="#alert"><code class="prettifyJS">alert()</code></a></li>
-                      <li class="navListItem"><a class="navItem" href="#innerHTML"><code class="prettifyJS">innerHTML</code></a></li>
-                      <li class="navListItem"><a class="navItem" href="#src"><code class="prettifyJS">src</code></a></li>
-                    </section>
-                    <li class="navListItem"><a class="navItem" href="#_INPUT">
-                        <codeG>Input</codeG>
-                      </a></li>
-                    <section id="TOC_INPUT">
-                      <li class="navListItem"><a class="navItem" href="#calculator"><code class="prettifyJS">Calculator</code></a></li>
-                      <li class="navListItem"><a class="navItem" href="#madlibs"><code class="prettifyJS">Mad Libs</code></a></li>
-                    </section>
-                    <li class="navListItem"><a class="navItem" href="#_CSSJS">
-                        <codeG>CSS and JS</codeG>
-                      </a></li>
-                    <section id="TOC_CSSJS">
-                    </section>
+                    <div id="tocDynamic"></div>
                     <li class="navListItem"><a class="navItem" href="#requirements">
                         <codeB>Requirements</codeB>
                       </a></li>
@@ -136,16 +110,16 @@
 
               <section id="section_JSIYWS">
                 <a id="_JSIYWS">
-                <h1>
-                  <codeG>Javascript In Your Website</codeG>
-                </h1>
-              </a>
+                  <h1>
+                    <codeG>Javascript In Your Website</codeG>
+                  </h1>
+                </a>
                 <p>
                   Javascript is a powerful piece of the web development puzzle. Without it, many websites
                   wouldn’t function. This isn’t the only language that adds functionality, but it is the most common
                   in basic websites due to its simplicity and easy integration.
                 </p>
-                <a id="AST">
+                <a id="0AST">
                 <h2>Adding <code class="prettifyJS">&lt;script></code> tags:</h2>
               </a>
                 <p>
@@ -223,7 +197,7 @@
                   <codeG>Handling Events</codeG>
                 </h1>
               </a>
-                <a id="alert">
+                <a id="0alert">
                 <h2><code class="prettifyJS">alert()</code></h2>
               </a>
                 <p>
@@ -286,7 +260,7 @@
                   <code class="prettifyJS">&lt;script>&lt;/script></code> tags above.)
                 </p>
                 <br>
-                <a id="innerHTML">
+                <a id="0innerHTML">
                 <h2><code class="prettifyJS">innerHTML</code></h2>
               </a>
                 <p>
@@ -356,7 +330,7 @@
                   <code class="prettifyHTML">innerHTML</code>: Is exactly as it sounds. The HTML inside of the element
                 </p>
                 <br>
-                <a id="src">
+                <a id="0src">
                 <h2><code class="prettifyJS">src</code></h2>
               </a>
                 <p> Other things that you can do is change pictures based on what was pressed. </p>
@@ -427,7 +401,7 @@
                   Beyond buttons, input fields are a very common form of HTML elements that use javascript
                   functionality. Because this one is a little more complicated, we’ll do this in multiple steps.
                 </p>
-                <a id="calculator">
+                <a id="0calculator">
                 <h2><code class="prettifyJS">Calculator</code></h2>
               </a>
                 <nav>
@@ -562,7 +536,7 @@
                   two numbers and see your answer.
                 </p>
 
-                <a id="madlibs">
+                <a id="0madlibs">
                 <h2><code class="prettifyJS">Mad Libs</code></h2>
               </a>
                 <nav>
@@ -663,7 +637,7 @@
                 </h1>
               </a>
 
-                <a id="hover">
+                <a id="0hover">
                 <h2><code class="prettifyJS">Hover</code></h2>
               </a>
                 <p>Final thing we will cover is a form of event listener and style changing through javascript.</p>
