@@ -34,6 +34,12 @@
    * 9:16 Finished copying over all content in WD3
    * See commit: https://github.com/mm909/Teaching/commit/595c7676667961981e197852f498a14af473ea95
    * Starting to clean the code/look for errors and bugs
+   * Fixed TOC Colors: https://github.com/mm909/Teaching/commit/5371c0ec3ced427d853024106220fbb5637ceb73
+   * Fixed progress bar bug: //github.com/mm909/Teaching/commit/09f4e0db07bb1d7af2fc1170654348e30d6d81c4
+   * Fixed line num bug: //github.com/mm909/Teaching/commit/3a7b2ddabe5dcbe610d551cffd80022297b2e203
+   * Added WD3 link to main page.
+   * Finished creating and debugging WD3 9:45
+   * Updating/uploading to github
    *
    */
-  // End -
+  // End - 11/19/2018 9:50pm
