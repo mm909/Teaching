@@ -12,6 +12,7 @@ $(document).ready(function() {
 });
 
 $(window).scroll(function() {
+  maxScroll = document.body.scrollHeight - window.innerHeight;
   currScroll = $(document).scrollTop();
   updatePB();
   updateTOC();
