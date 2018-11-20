@@ -513,6 +513,11 @@ textB {
   color: #e6e9ed;
 }
 
+.prettifyPHP {
+  background-color: #2f3640;
+  color: #ac92ec;
+}
+
 .prettifyPurple {
   background-color: #2f3640;
   color: #ac92ec;
@@ -561,6 +566,21 @@ textB {
   /* Internet Explorer/Edge */
   user-select: none;
   /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.finalResultWapper {
+  margin: auto;
+  text-align: center;
+  width: 80%;
+}
+
+.xamppImage {
+  margin: auto;
+  text-align: center;
+}
+
+.paraCenter {
+  text-align: center;
 }
 
 
