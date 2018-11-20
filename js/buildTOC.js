@@ -53,7 +53,18 @@ function buildTOCSubHeaders() {
       let name = subSections[i][j].id;
       let text = $(subSections[i][j])[0].innerText;
       text = text.replace(/</g, "&lt;")
-      $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyJS>" + text + "</code></a></li>")
+      $id = $("head").attr('id');
+      if ($id == "php") {
+        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyPHP>" + text + "</code></a></li>")
+      } else if ($id == "js") {
+        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyJS>" + text + "</code></a></li>")
+      } else if ($id == "css") {
+        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyCSS>" + text + "</code></a></li>")
+      } else if ($id == "html") {
+        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyHTML>" + text + "</code></a></li>")
+      } else {
+        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyJS>" + text + "</code></a></li>")
+      }
       $("#TOC_" + tocname).append($temp);
     }
   }
