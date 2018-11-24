@@ -574,6 +574,10 @@ textB {
   width: 80%;
 }
 
+.finalResultWapper img {
+  width: 100%;
+}
+
 .xamppImage {
   margin: auto;
   text-align: center;
