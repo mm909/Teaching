@@ -62,8 +62,10 @@ function buildTOCSubHeaders() {
         $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyCSS>" + text + "</code></a></li>")
       } else if ($id == "html") {
         $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyHTML>" + text + "</code></a></li>")
+      } else if ($id == "sql") {
+        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifySQL>" + text + "</code></a></li>")
       } else {
-        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyJS>" + text + "</code></a></li>")
+        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyResult>" + text + "</code></a></li>")
       }
       $("#TOC_" + tocname).append($temp);
     }

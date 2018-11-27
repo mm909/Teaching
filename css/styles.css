@@ -506,6 +506,11 @@ textB {
   background-color: #2f3640;
 }
 
+.prettifySQL {
+  color: #f0ff76;
+  background-color: #2f3640;
+}
+
 .prettifyCSS {
   background-color: #2f3640;
   color: #90EE90;
