@@ -475,6 +475,10 @@ textB {
   margin: auto;
 }
 
+.tutImageContainer img {
+  width: 100%;
+}
+
 .tutImage {
   width: 100%;
 }
@@ -486,6 +490,10 @@ textB {
 .img-s {
   max-width: 500px;
   max-height: 500px;
+}
+
+.longCode ol {
+  padding-left: 55px !important;
 }
 
 .questionmark {
