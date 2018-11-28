@@ -1911,20 +1911,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                   an array in the form in your "home.php". Without this conditional, our loop would sometimes
                   loop through an empty array if you don’t select the checkbox.
                 </p>
-
-
-
-                <!-- NEED TO BE CLEANED BELOW  -->
-
-
-
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php7" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">add.php</code></a>
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-add.php10" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">add.php</code></a>
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-logout.php10" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">logout.php</code></a>
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-home.php10" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">home.php</code></a>
+                    <a class="nav-item nav-link" id="checklogin.php" data-toggle="tab" href="#-checklogin.php10" role="tab" aria-controls="checklogin.php" aria-selected="true"><code class="prettifySQL codetab">checklogin.php</code></a>
+                    <a class="nav-item nav-link" id="register.php" data-toggle="tab" href="#-register.php10" role="tab" aria-controls="register.php" aria-selected="true"><code class="prettifySQL codetab">register.php</code></a>
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-login.php10" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">login.php</code></a>
+                    <a class="nav-item nav-link" id="index.php" data-toggle="tab" href="#-index.php10" role="tab" aria-controls="index.php" aria-selected="true"><code class="prettifySQL codetab">index.php</code></a>
                   </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
-                  <div class="tab-pane fade show active" id="-php7" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <div class="tab-pane fade show active" id="-add.php10" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class='CodeBoxL'>
                       <pre class="prettyprint linenums lang-php CodeBoxBuffer">
 &lt;?php
@@ -1964,15 +1963,229 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </pre>
                     </div>
                   </div>
+                  <div class="tab-pane fade show" id="-logout.php10" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;?php
+  session_start();
+  session_destroy();
+  header("locaion:index.php");
+?>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-home.php10" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Home Page&lt;/title>
+  &lt;/head>
+
+  &lt;?php
+    session_start();
+    // Check if logged in or not
+    if(!$_SESSION['user']) {
+      // If not logged in
+      header("location:index.php");
+    }
+    // Assign user value if logged in
+    $user = $_SESSION['user'];
+  ?>
+
+  &lt;body>
+
+    &lt;h2>Home Page&lt;/h2>
+    &lt;p>Hello &lt;?php Print "$user" ?>!&lt;/p>
+
+    &lt;a href="logout.php">Click here to logout</a> &lt;br> &lt;br>
+    &lt;form action="add.php" method="post">
+      Add more to the list: &lt;input name="details" value="text"> &lt;br>
+      Public post? &lt;input type="checkbox" name="public[]" value="yes">
+      &lt;input type="submit" value="Add to list">
+    &lt;/form>
+
+    &lt;h2 align="center">My List&lt;/h2>
+    &lt;table border="1px" width="100%">
+      &lt;tr>
+        &lt;th>ID&lt;/th>
+        &lt;th>Details&lt;/th>
+        &lt;th>Edit&lt;/th>
+        &lt;th>Delete&lt;/th>
+      &lt;/tr>
+    &lt;/table>
+  &lt;/body>
+&lt;/html>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-checklogin.php10" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;?php
+  session_start();
+
+  // Create a connection with the database
+  $con = mysqli_connect("localhost","root","","first_db");
+
+  // Check connection
+  if(mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+  $username = mysqli_real_escape_string($con, $_POST['username'])
+  $password = mysqli_real_escape_string($con, $_POST['password'])
+
+  // Check if the username exists
+  $query = mysqli_query($con, "SELECT * from users WHERE username = '$username'");
+  $exists = mysqli_num_rows($query);
+
+  $table_users = "";
+  $table_password = "";
+
+  if(exists > 0){ // If there is a username
+    while($row = mysqli_fetch_array($query)) { // Display all rows from Query
+      // Populate array with results
+      $table_users = $row['username'];
+      $table_password = $row['password'];
+    }
+
+    // Check array and see if matched username and password
+    if($username == $table_users && ($password == $table_password)) {
+      // Ser the session to the logged in user
+      $_SESSION['user'] = $username;
+      header("location: home.php");
+    } else {
+      Print '&lt;script>alert("Incorrect Password!");&lt;/script>'
+      Print '&lt;script>window.location.assign("login.php")&lt;/script>'
+    }
+
+  } else {
+    Print '&lt;script>alert("Incorrect Username!");&lt;/script>'
+    Print '&lt;script>window.location.assign("login.php")&lt;/script>'
+  }
+
+?>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-register.php10" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Register Page&lt;/title>
+  &lt;/head>
+
+  &lt;body>
+  &lt;h2>Registration Page&lt;/h2>
+  &lt;a href="index.php">Click here to go back&lt;/a> &lt;br> &lt;br>
+
+  &lt;form action="register.php" method="post">
+    Enter Username: &lt;input type="text" name="username" required="required">
+    Enter Password: &lt;input type="password" name="password" required="required">
+    &lt;input type="submit" value="Register"/>
+  &lt;/form>
+
+  &lt;/body>
+&lt;/html>
+
+&lt;?php
+  if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Create a connection with the database
+    $con = mysqli_connect("localhost","root","","first_db");
+
+    // Check connection
+    if(mysqli_connect_errno()) {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
+
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+
+    $bool = true;
+
+    $query = mysqli_query($con, "Select * from users");
+    while($row = mysqli_fetch_array($query)) {
+      $table_users = $row['username'];
+      if($username == $table_users) {
+        $bool = false;
+        Print '&lt;script>alert("Username has been taken!");&lt;/script>';
+        Print '&lt;script>window.location.assign("register.php")&lt;/script>';
+      }
+    }
+
+    if($bool) {
+      mysqli_query($con, "INSERT INTO users(username,password) VALUES ('$username', '$password')");
+      Print '&lt;script>alert("Successfully Registered!");&lt;/script>';
+      Print '&lt;script>window.location.assign("register.php")&lt;/script>';
+    }
+  }
+?>
+          </pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-login.php10" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Login Page&lt;/title>
+  &lt;/head>
+
+  &lt;body>
+  &lt;h2>Login Page&lt;/h2>
+  &lt;a href="index.php">Click here to go back&lt;/a> &lt;br> &lt;br>
+
+  &lt;form action="checklogin.php" method="post">
+    Enter Username: &lt;input type="text" name="username" required="required">
+    Enter Password: &lt;input type="password" name="password" required="required">
+    &lt;input type="submit" value="Login"/>
+  &lt;/form>
+
+  &lt;/body>
+&lt;/html>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-index.php10" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Login Page&lt;/title>
+  &lt;/head>
+  &lt;body>
+    &lt;?php
+      echo "&lt;p>Hello, World!&lt;/p>";
+    ?>
+    &lt;a href="login.php">Click here to login&lt;/a>
+    &lt;a href="register.php">Click here to register&lt;/a>
+  &lt;/body>
+&lt;/html>
+</pre>
+                    </div>
+                  </div>
                 </div>
                 <a id="0DLOHP"><h2> <code class="prettifySQL">Displaying list on home page</code></h2></a>
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php7" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">home.php</code></a>
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-home.php11" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">home.php</code></a>
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-add.php11" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">add.php</code></a>
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-logout.php11" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">logout.php</code></a>
+                    <a class="nav-item nav-link" id="checklogin.php" data-toggle="tab" href="#-checklogin.php11" role="tab" aria-controls="checklogin.php" aria-selected="true"><code class="prettifySQL codetab">checklogin.php</code></a>
+                    <a class="nav-item nav-link" id="register.php" data-toggle="tab" href="#-register.php11" role="tab" aria-controls="register.php" aria-selected="true"><code class="prettifySQL codetab">register.php</code></a>
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-login.php11" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">login.php</code></a>
+                    <a class="nav-item nav-link" id="index.php" data-toggle="tab" href="#-index.php11" role="tab" aria-controls="index.php" aria-selected="true"><code class="prettifySQL codetab">index.php</code></a>
                   </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
-                  <div class="tab-pane fade show active" id="-php7" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <div class="tab-pane fade show active" id="-home.php11" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class='CodeBoxL'>
                       <pre class="prettyprint linenums lang-php CodeBoxBuffer">
 &lt;!DOCTYPE html>
@@ -2039,14 +2252,215 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </pre>
                     </div>
                   </div>
+                  <div class="tab-pane fade show" id="-add.php11" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;?php
+  session_start();
+  if(!$_SESSION['user']) {
+    header("location:index.php");
+  }
+
+  // Only add if the request is secure
+  if($_SERVER['REQUEST_METHOD'] == "POST") {
+    $con = mysqli_connect("localhost", "root", "", "first_db");
+    $details = mysqli_real_escape_string($con, $_POST['details']);
+    $time = strfrime("%X");
+    $date = strfrime("%B %d, %Y");
+    $decision = "no";
+
+    // Gets the data form the check box to see if it was checked
+    if(isset($_POST['public'])) {
+      $checkboxes = $_POST['public'];
+    } else {
+      $checkboxes = array();
+    }
+
+    foreach($checkboxes as $each_check) {
+      if($each_check != null) {
+        $decision = "yes"; // Yes this will be public
+      }
+    }
+
+    mysqli_query($con, "INSERT INTO list (details, date_posted, time_posted, public)
+                    VALUES ('$details', '$date', '$time', '$decision')");
+    header(location:home.php);
+  } else {
+    header(location:home.php);
+  }
+?>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-logout.php11" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;?php
+  session_start();
+  session_destroy();
+  header("locaion:index.php");
+?>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-checklogin.php11" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;?php
+  session_start();
+
+  // Create a connection with the database
+  $con = mysqli_connect("localhost","root","","first_db");
+
+  // Check connection
+  if(mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+  $username = mysqli_real_escape_string($con, $_POST['username'])
+  $password = mysqli_real_escape_string($con, $_POST['password'])
+
+  // Check if the username exists
+  $query = mysqli_query($con, "SELECT * from users WHERE username = '$username'");
+  $exists = mysqli_num_rows($query);
+
+  $table_users = "";
+  $table_password = "";
+
+  if(exists > 0){ // If there is a username
+    while($row = mysqli_fetch_array($query)) { // Display all rows from Query
+      // Populate array with results
+      $table_users = $row['username'];
+      $table_password = $row['password'];
+    }
+
+    // Check array and see if matched username and password
+    if($username == $table_users && ($password == $table_password)) {
+      // Ser the session to the logged in user
+      $_SESSION['user'] = $username;
+      header("location: home.php");
+    } else {
+      Print '&lt;script>alert("Incorrect Password!");&lt;/script>'
+      Print '&lt;script>window.location.assign("login.php")&lt;/script>'
+    }
+
+  } else {
+    Print '&lt;script>alert("Incorrect Username!");&lt;/script>'
+    Print '&lt;script>window.location.assign("login.php")&lt;/script>'
+  }
+
+?>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-register.php11" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Register Page&lt;/title>
+  &lt;/head>
+
+  &lt;body>
+  &lt;h2>Registration Page&lt;/h2>
+  &lt;a href="index.php">Click here to go back&lt;/a> &lt;br> &lt;br>
+
+  &lt;form action="register.php" method="post">
+    Enter Username: &lt;input type="text" name="username" required="required">
+    Enter Password: &lt;input type="password" name="password" required="required">
+    &lt;input type="submit" value="Register"/>
+  &lt;/form>
+
+  &lt;/body>
+&lt;/html>
+
+&lt;?php
+  if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Create a connection with the database
+    $con = mysqli_connect("localhost","root","","first_db");
+
+    // Check connection
+    if(mysqli_connect_errno()) {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
+
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+
+    $bool = true;
+
+    $query = mysqli_query($con, "Select * from users");
+    while($row = mysqli_fetch_array($query)) {
+      $table_users = $row['username'];
+      if($username == $table_users) {
+        $bool = false;
+        Print '&lt;script>alert("Username has been taken!");&lt;/script>';
+        Print '&lt;script>window.location.assign("register.php")&lt;/script>';
+      }
+    }
+
+    if($bool) {
+      mysqli_query($con, "INSERT INTO users(username,password) VALUES ('$username', '$password')");
+      Print '&lt;script>alert("Successfully Registered!");&lt;/script>';
+      Print '&lt;script>window.location.assign("register.php")&lt;/script>';
+    }
+  }
+?>
+          </pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-login.php11" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Login Page&lt;/title>
+  &lt;/head>
+
+  &lt;body>
+  &lt;h2>Login Page&lt;/h2>
+  &lt;a href="index.php">Click here to go back&lt;/a> &lt;br> &lt;br>
+
+  &lt;form action="checklogin.php" method="post">
+    Enter Username: &lt;input type="text" name="username" required="required">
+    Enter Password: &lt;input type="password" name="password" required="required">
+    &lt;input type="submit" value="Login"/>
+  &lt;/form>
+
+  &lt;/body>
+&lt;/html>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-index.php11" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Login Page&lt;/title>
+  &lt;/head>
+  &lt;body>
+    &lt;?php
+      echo "&lt;p>Hello, World!&lt;/p>";
+    ?>
+    &lt;a href="login.php">Click here to login&lt;/a>
+    &lt;a href="register.php">Click here to register&lt;/a>
+  &lt;/body>
+&lt;/html>
+</pre>
+                    </div>
+                  </div>
                 </div>
                 <p>
-                  We altered the &lt;table&lt;/table> tags in the home page to query and retrieve the values from the
+                  We altered the <code class="prettifySQL">&lt;table&lt;/table></code> tags in the home page to query and retrieve the values from the
                   list table. We then looped through all the results and added them to the home page for logged
                   in users to see.
                 </p>
               </section>
-
 
 
               <!-- section divider -->
@@ -2060,14 +2474,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </p>
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php8" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">add.php</code></a>
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php8" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">home.php</code></a>
                   </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
                   <div class="tab-pane fade show active" id="-php8" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class='CodeBoxL'>
-                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
-Print '&lt;td align="center">&lt;a href="edit.php" id='. $row['id'] .'>edit&lt;/a>&lt;/td>'; //53
+                      <pre class="prettyprint linenums:53 lang-php CodeBoxBuffer">
+Print '&lt;td align="center">&lt;a href="edit.php" id='. $row['id'] .'>edit&lt;/a>&lt;/td>';
 Print '&lt;td align="center">&lt;a href="delete.php" id='. $row['id'] .'>delete&lt;/a>&lt;/td>';
 </pre>
                     </div>
@@ -2105,11 +2519,18 @@ Print '&lt;td align="center">&lt;a href="delete.php" id='. $row['id'] .'>delete&
                 </p>
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php7" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">edit.php</code></a>
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-edit.php12" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">edit.php</code></a>
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-home.php12" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">home.php</code></a>
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-add.php12" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">add.php</code></a>
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-logout.php12" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">logout.php</code></a>
+                    <a class="nav-item nav-link" id="checklogin.php" data-toggle="tab" href="#-checklogin.php12" role="tab" aria-controls="checklogin.php" aria-selected="true"><code class="prettifySQL codetab">checklogin.php</code></a>
+                    <a class="nav-item nav-link" id="register.php" data-toggle="tab" href="#-register.php12" role="tab" aria-controls="register.php" aria-selected="true"><code class="prettifySQL codetab">register.php</code></a>
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-login.php12" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">login.php</code></a>
+                    <a class="nav-item nav-link" id="index.php" data-toggle="tab" href="#-index.php12" role="tab" aria-controls="index.php" aria-selected="true"><code class="prettifySQL codetab">index.php</code></a>
                   </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
-                  <div class="tab-pane fade show active" id="-php7" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <div class="tab-pane fade show active" id="-edit.php12" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class='CodeBoxL'>
                       <pre class="prettyprint linenums lang-php CodeBoxBuffer longCode">
 &lt;!DOCTYPE html>
@@ -2220,8 +2641,278 @@ Print '&lt;td align="center">&lt;a href="delete.php" id='. $row['id'] .'>delete&
 </pre>
                     </div>
                   </div>
+                  <div class="tab-pane fade show" id="-home.php12" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Home Page&lt;/title>
+  &lt;/head>
+
+  &lt;?php
+    session_start();
+    // Check if logged in or not
+    if(!$_SESSION['user']) {
+      // If not logged in
+      header("location:index.php");
+    }
+    // Assign user value if logged in
+    $user = $_SESSION['user'];
+  ?>
+
+  &lt;body>
+
+    &lt;h2>Home Page&lt;/h2>
+    &lt;p>Hello &lt;?php Print "$user" ?>!&lt;/p>
+
+    &lt;a href="logout.php">Click here to logout</a> &lt;br> &lt;br>
+    &lt;form action="add.php" method="post">
+      Add more to the list: &lt;input name="details" value="text"> &lt;br>
+      Public post? &lt;input type="checkbox" name="public[]" value="yes">
+      &lt;input type="submit" value="Add to list">
+    &lt;/form>
+
+    &lt;h2 align="center">My List&lt;/h2>
+    &lt;table border="1px" width="100%">
+
+      &lt;tr>
+        &lt;th>ID&lt;/th>
+        &lt;th>Details&lt;/th>
+        &lt;th>Post Time&lt;/th>
+        &lt;th>Post Time&lt;/th>
+        &lt;th>Edit&lt;/th>
+        &lt;th>Delete&lt;/th>
+        &lt;th>Public Host&lt;/th>
+      &lt;/tr>
+
+      &lt;!-- User Data -->
+      &lt;?php
+        $con = mysqli_connect("localhost", "root", "", "first_db");
+        $query = mysqli_query($con, "Select * from users");
+        while($row = mysqli_fetch_array($query)) {
+          Print "&lt;tr>"
+          Print '&lt;td align="center">' . $row['id'] . "&lt;/td>";
+          Print '&lt;td align="center">' . $row['details'] . "&lt;/td>";
+          Print '&lt;td align="center">' . $row['date_posted'] . " - " . $row['time_posted'] . "&lt;/td>";
+          Print '&lt;td align="center">' . $row['date_edited'] . " - " . $row['time_edited'] . "&lt;/td>";
+          Print '&lt;td align="center">&lt;a href="edit.php">edit&lt;/a>&lt;/td>';
+          Print '&lt;td align="center">&lt;a href="delete.php">delete&lt;/a>&lt;/td>';
+          Print '&lt;td align="center">' . $row['public'] . "&lt;/td>";
+          Print "&lt;/tr>"
+        }
+      ?>
+    &lt;/table>
+  &lt;/body>
+&lt;/html>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-add.php12" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;?php
+  session_start();
+  if(!$_SESSION['user']) {
+    header("location:index.php");
+  }
+
+  // Only add if the request is secure
+  if($_SERVER['REQUEST_METHOD'] == "POST") {
+    $con = mysqli_connect("localhost", "root", "", "first_db");
+    $details = mysqli_real_escape_string($con, $_POST['details']);
+    $time = strfrime("%X");
+    $date = strfrime("%B %d, %Y");
+    $decision = "no";
+
+    // Gets the data form the check box to see if it was checked
+    if(isset($_POST['public'])) {
+      $checkboxes = $_POST['public'];
+    } else {
+      $checkboxes = array();
+    }
+
+    foreach($checkboxes as $each_check) {
+      if($each_check != null) {
+        $decision = "yes"; // Yes this will be public
+      }
+    }
+
+    mysqli_query($con, "INSERT INTO list (details, date_posted, time_posted, public)
+                    VALUES ('$details', '$date', '$time', '$decision')");
+    header(location:home.php);
+  } else {
+    header(location:home.php);
+  }
+?>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-logout.php12" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;?php
+  session_start();
+  session_destroy();
+  header("locaion:index.php");
+?>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-checklogin.php12" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;?php
+  session_start();
+
+  // Create a connection with the database
+  $con = mysqli_connect("localhost","root","","first_db");
+
+  // Check connection
+  if(mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+  $username = mysqli_real_escape_string($con, $_POST['username'])
+  $password = mysqli_real_escape_string($con, $_POST['password'])
+
+  // Check if the username exists
+  $query = mysqli_query($con, "SELECT * from users WHERE username = '$username'");
+  $exists = mysqli_num_rows($query);
+
+  $table_users = "";
+  $table_password = "";
+
+  if(exists > 0){ // If there is a username
+    while($row = mysqli_fetch_array($query)) { // Display all rows from Query
+      // Populate array with results
+      $table_users = $row['username'];
+      $table_password = $row['password'];
+    }
+
+    // Check array and see if matched username and password
+    if($username == $table_users && ($password == $table_password)) {
+      // Ser the session to the logged in user
+      $_SESSION['user'] = $username;
+      header("location: home.php");
+    } else {
+      Print '&lt;script>alert("Incorrect Password!");&lt;/script>'
+      Print '&lt;script>window.location.assign("login.php")&lt;/script>'
+    }
+
+  } else {
+    Print '&lt;script>alert("Incorrect Username!");&lt;/script>'
+    Print '&lt;script>window.location.assign("login.php")&lt;/script>'
+  }
+
+?>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-register.php12" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Register Page&lt;/title>
+  &lt;/head>
+
+  &lt;body>
+  &lt;h2>Registration Page&lt;/h2>
+  &lt;a href="index.php">Click here to go back&lt;/a> &lt;br> &lt;br>
+
+  &lt;form action="register.php" method="post">
+    Enter Username: &lt;input type="text" name="username" required="required">
+    Enter Password: &lt;input type="password" name="password" required="required">
+    &lt;input type="submit" value="Register"/>
+  &lt;/form>
+
+  &lt;/body>
+&lt;/html>
+
+&lt;?php
+  if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Create a connection with the database
+    $con = mysqli_connect("localhost","root","","first_db");
+
+    // Check connection
+    if(mysqli_connect_errno()) {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
+
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+
+    $bool = true;
+
+    $query = mysqli_query($con, "Select * from users");
+    while($row = mysqli_fetch_array($query)) {
+      $table_users = $row['username'];
+      if($username == $table_users) {
+        $bool = false;
+        Print '&lt;script>alert("Username has been taken!");&lt;/script>';
+        Print '&lt;script>window.location.assign("register.php")&lt;/script>';
+      }
+    }
+
+    if($bool) {
+      mysqli_query($con, "INSERT INTO users(username,password) VALUES ('$username', '$password')");
+      Print '&lt;script>alert("Successfully Registered!");&lt;/script>';
+      Print '&lt;script>window.location.assign("register.php")&lt;/script>';
+    }
+  }
+?>
+          </pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-login.php12" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Login Page&lt;/title>
+  &lt;/head>
+
+  &lt;body>
+  &lt;h2>Login Page&lt;/h2>
+  &lt;a href="index.php">Click here to go back&lt;/a> &lt;br> &lt;br>
+
+  &lt;form action="checklogin.php" method="post">
+    Enter Username: &lt;input type="text" name="username" required="required">
+    Enter Password: &lt;input type="password" name="password" required="required">
+    &lt;input type="submit" value="Login"/>
+  &lt;/form>
+
+  &lt;/body>
+&lt;/html>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-index.php12" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Login Page&lt;/title>
+  &lt;/head>
+  &lt;body>
+    &lt;?php
+      echo "&lt;p>Hello, World!&lt;/p>";
+    ?>
+    &lt;a href="login.php">Click here to login&lt;/a>
+    &lt;a href="register.php">Click here to register&lt;/a>
+  &lt;/body>
+&lt;/html>
+</pre>
+                    </div>
+                  </div>
+                </div>
                   <p>
-                    if($_SERVER["REQUEST_METHOD"] == "POST":
+                    <code class="prettifySQL"> if($_SERVER["REQUEST_METHOD"] == "POST"</code>
                     Is a conditional that is triggered when a
                     form is submitting through POST (Not
                     GET because we are directly accessing
@@ -2249,11 +2940,18 @@ Print '&lt;td align="center">&lt;a href="delete.php" id='. $row['id'] .'>delete&
                 </p>
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php7" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">home.php</code></a>
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-home.php13" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">home.php</code></a>
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-edit.php13" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">edit.php</code></a>
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-add.php13" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">add.php</code></a>
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-logout.php13" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">logout.php</code></a>
+                    <a class="nav-item nav-link" id="checklogin.php" data-toggle="tab" href="#-checklogin.php13" role="tab" aria-controls="checklogin.php" aria-selected="true"><code class="prettifySQL codetab">checklogin.php</code></a>
+                    <a class="nav-item nav-link" id="register.php" data-toggle="tab" href="#-register.php13" role="tab" aria-controls="register.php" aria-selected="true"><code class="prettifySQL codetab">register.php</code></a>
+                    <a class="nav-item nav-link" id="nav-home-tab" data-toggle="tab" href="#-login.php13" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">login.php</code></a>
+                    <a class="nav-item nav-link" id="index.php" data-toggle="tab" href="#-index.php13" role="tab" aria-controls="index.php" aria-selected="true"><code class="prettifySQL codetab">index.php</code></a>
                   </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
-                  <div class="tab-pane fade show active" id="-php7" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <div class="tab-pane fade show active" id="-home.php13" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class='CodeBoxL'>
                       <pre class="prettyprint linenums lang-php CodeBoxBuffer">
 &lt;!DOCTYPE html>
@@ -2331,6 +3029,319 @@ Print '&lt;td align="center">&lt;a href="delete.php" id='. $row['id'] .'>delete&
 </pre>
                     </div>
                   </div>
+                  <div class="tab-pane fade show" id="-edit.php13" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer longCode">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Home Page&lt;/title>
+  &lt;/head>
+
+  &lt;?php
+    session_start();
+    // Check if logged in or not
+    if(!$_SESSION['user']) {
+      // If not logged in
+      header("location:index.php");
+    }
+    // Assign user value if logged in
+    $user = $_SESSION['user'];
+  ?>
+
+  &lt;body>
+
+    &lt;h2>Home Page&lt;/h2>
+    &lt;p>Hello &lt;?php Print "$user" ?>!&lt;/p>
+
+    &lt;a href="logout.php">Click here to logout</a> &lt;br> &lt;br>
+    &lt;a href="home.php">Return to Home Page</a> &lt;br> &lt;br>
+
+    &lt;h2>Currently Selected&lt;/h2>
+
+    &lt;h2 align="center">My List&lt;/h2>
+    &lt;table border="1px" width="100%">
+      &lt;tr>
+        &lt;th>ID&lt;/th>
+        &lt;th>Details&lt;/th>
+        &lt;th>Post Time&lt;/th>
+        &lt;th>Post Time&lt;/th>
+        &lt;th>Public Host&lt;/th>
+      &lt;/tr>
+
+      &lt;?php
+        if(!empty($_GET['id'])){
+          $id = $_GET['id'];
+          $_SESSION['id'] = $id;
+          $id_exists = true;
+          $con = mysqli_connect("localhost", "root", "", "first_db");
+          $query = mysqli_query($con, "Select * from users");
+          $count = mysqli_num_rows($query);
+          if($count > 0){
+            while($row = mysqli_fetch_array($query)) {
+              Print "&lt;tr>"
+                Print '&lt;td align="center">' . $row['id'] . "&lt;/td>";
+                Print '&lt;td align="center">' . $row['details'] . "&lt;/td>";
+                Print '&lt;td align="center">' . $row['date_posted'] . " - " . $row['time_posted'] . "&lt;/td>";
+                Print '&lt;td align="center">' . $row['date_edited'] . " - " . $row['time_edited'] . "&lt;/td>";
+                Print '&lt;td align="center">' . $row['public'] . "&lt;/td>";
+              Print "&lt;/tr>"
+            }
+          } else {
+            $id_exists = false;
+          }
+        }
+      ?>
+    &lt;/table>
+    &lt;br>
+    &lt;!-- User Data -->
+    &lt;?php
+      if($id_exists) {
+        Print `
+        &lt;form action="add.php" method="post">
+        Add more to the list: &lt;input name="details" value="text"> &lt;br>
+        Public post? &lt;input type="checkbox" name="public[]" value="yes">
+        &lt;input type="submit" value="Add to list">
+        &lt;/form>
+        `;
+      } else {
+        Print '&lt;h2 align="center">There is no data to be edited.&lt;/h2>';
+      }
+    ?>
+  &lt;/body>
+&lt;/html>
+
+&lt;?php
+  if($_SERVER['REQUEST_METHOD'] == "POST") {
+    $con = mysqli_connect("localhost", "root", "", "first_db");
+    $details = mysqli_real_escape_string($con, $_POST['details']);
+    $public = "no";
+    $id = $_SESSION['id'];
+    $time = strfrime("%X");
+    $date = strfrime("%B %d, %Y");
+
+    // Gets the data form the check box to see if it was checked
+    if(isset($_POST['public'])) {
+      $checkboxes = $_POST['public'];
+    } else {
+      $checkboxes = array();
+    }
+
+    foreach($checkboxes as $list) {
+      if($list != null) {
+        $public = "yes"; // Yes this will be public
+      }
+    }
+
+    mysqli_query($con, "UPDATE list SET details='$details', public='$public', date_edited='$date', time_edited='$time' WHERE id='$id'");
+    header(location:home.php);
+  }
+?>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-add.php13" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;?php
+  session_start();
+  if(!$_SESSION['user']) {
+    header("location:index.php");
+  }
+
+  // Only add if the request is secure
+  if($_SERVER['REQUEST_METHOD'] == "POST") {
+    $con = mysqli_connect("localhost", "root", "", "first_db");
+    $details = mysqli_real_escape_string($con, $_POST['details']);
+    $time = strfrime("%X");
+    $date = strfrime("%B %d, %Y");
+    $decision = "no";
+
+    // Gets the data form the check box to see if it was checked
+    if(isset($_POST['public'])) {
+      $checkboxes = $_POST['public'];
+    } else {
+      $checkboxes = array();
+    }
+
+    foreach($checkboxes as $each_check) {
+      if($each_check != null) {
+        $decision = "yes"; // Yes this will be public
+      }
+    }
+
+    mysqli_query($con, "INSERT INTO list (details, date_posted, time_posted, public)
+                    VALUES ('$details', '$date', '$time', '$decision')");
+    header(location:home.php);
+  } else {
+    header(location:home.php);
+  }
+?>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-logout.php13" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;?php
+  session_start();
+  session_destroy();
+  header("locaion:index.php");
+?>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-checklogin.php13" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;?php
+  session_start();
+
+  // Create a connection with the database
+  $con = mysqli_connect("localhost","root","","first_db");
+
+  // Check connection
+  if(mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+  $username = mysqli_real_escape_string($con, $_POST['username'])
+  $password = mysqli_real_escape_string($con, $_POST['password'])
+
+  // Check if the username exists
+  $query = mysqli_query($con, "SELECT * from users WHERE username = '$username'");
+  $exists = mysqli_num_rows($query);
+
+  $table_users = "";
+  $table_password = "";
+
+  if(exists > 0){ // If there is a username
+    while($row = mysqli_fetch_array($query)) { // Display all rows from Query
+      // Populate array with results
+      $table_users = $row['username'];
+      $table_password = $row['password'];
+    }
+
+    // Check array and see if matched username and password
+    if($username == $table_users && ($password == $table_password)) {
+      // Ser the session to the logged in user
+      $_SESSION['user'] = $username;
+      header("location: home.php");
+    } else {
+      Print '&lt;script>alert("Incorrect Password!");&lt;/script>'
+      Print '&lt;script>window.location.assign("login.php")&lt;/script>'
+    }
+
+  } else {
+    Print '&lt;script>alert("Incorrect Username!");&lt;/script>'
+    Print '&lt;script>window.location.assign("login.php")&lt;/script>'
+  }
+
+?>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-register.php13" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Register Page&lt;/title>
+  &lt;/head>
+
+  &lt;body>
+  &lt;h2>Registration Page&lt;/h2>
+  &lt;a href="index.php">Click here to go back&lt;/a> &lt;br> &lt;br>
+
+  &lt;form action="register.php" method="post">
+    Enter Username: &lt;input type="text" name="username" required="required">
+    Enter Password: &lt;input type="password" name="password" required="required">
+    &lt;input type="submit" value="Register"/>
+  &lt;/form>
+
+  &lt;/body>
+&lt;/html>
+
+&lt;?php
+  if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Create a connection with the database
+    $con = mysqli_connect("localhost","root","","first_db");
+
+    // Check connection
+    if(mysqli_connect_errno()) {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
+
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+
+    $bool = true;
+
+    $query = mysqli_query($con, "Select * from users");
+    while($row = mysqli_fetch_array($query)) {
+      $table_users = $row['username'];
+      if($username == $table_users) {
+        $bool = false;
+        Print '&lt;script>alert("Username has been taken!");&lt;/script>';
+        Print '&lt;script>window.location.assign("register.php")&lt;/script>';
+      }
+    }
+
+    if($bool) {
+      mysqli_query($con, "INSERT INTO users(username,password) VALUES ('$username', '$password')");
+      Print '&lt;script>alert("Successfully Registered!");&lt;/script>';
+      Print '&lt;script>window.location.assign("register.php")&lt;/script>';
+    }
+  }
+?>
+          </pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-login.php13" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Login Page&lt;/title>
+  &lt;/head>
+
+  &lt;body>
+  &lt;h2>Login Page&lt;/h2>
+  &lt;a href="index.php">Click here to go back&lt;/a> &lt;br> &lt;br>
+
+  &lt;form action="checklogin.php" method="post">
+    Enter Username: &lt;input type="text" name="username" required="required">
+    Enter Password: &lt;input type="password" name="password" required="required">
+    &lt;input type="submit" value="Login"/>
+  &lt;/form>
+
+  &lt;/body>
+&lt;/html>
+</pre>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade show" id="-index.php13" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;title>PHP/SQL Login Page&lt;/title>
+  &lt;/head>
+  &lt;body>
+    &lt;?php
+      echo "&lt;p>Hello, World!&lt;/p>";
+    ?>
+    &lt;a href="login.php">Click here to login&lt;/a>
+    &lt;a href="register.php">Click here to register&lt;/a>
+  &lt;/body>
+&lt;/html>
+</pre>
+                    </div>
+                  </div>
                 </div>
                 <p>
                   Notice how the URL you are
@@ -2355,6 +3366,11 @@ Print '&lt;td align="center">&lt;a href="delete.php" id='. $row['id'] .'>delete&
                 </div>
                 <br>
                 <p>Add this code into the "delete.php".</p>
+
+
+                <!-- NEED TO BE CLEANED BELOW  -->
+
+
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php7" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">delete.php</code></a>
@@ -2389,7 +3405,7 @@ Print '&lt;td align="center">&lt;a href="delete.php" id='. $row['id'] .'>delete&
 
 
               <section id="section_DPD">
-                <a id="_DPS"><h1><codeG>Displaying "Public Data"</codeG></h1></a>
+                <a id="_DPD"><h1><codeG>Displaying "Public Data"</codeG></h1></a>
                 <p>
                   We've done quite a bit, but what you now have is very impressive! However, there is one last
                   thing we need to add into our site, and that is the ability for "guest" users (the users who are not
@@ -2397,7 +3413,7 @@ Print '&lt;td align="center">&lt;a href="delete.php" id='. $row['id'] .'>delete&
                 </p>
                 <nav>
                   <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php1" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php1" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifySQL codetab">index.php</code></a>
                   </div>
                 </nav>
                 <br>
