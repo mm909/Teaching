@@ -506,6 +506,11 @@ textB {
   background-color: #2f3640;
 }
 
+.prettifyCOM {
+  color: #90EE90;
+  background-color: #2f3640;
+}
+
 .prettifySQL {
   color: #f0ff76;
   background-color: #2f3640;
@@ -600,10 +605,10 @@ textB {
   text-align: center;
 }
 
-
 @media only screen and (max-width: 1000px) {
   .docsNavContainer {
     display: none;
   }
 }
+
 /* EOF */

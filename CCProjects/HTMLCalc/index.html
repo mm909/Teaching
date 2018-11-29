@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="sql">
+  <title>HTML Calc</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+  <script type="text/javascript" src="../../js/buildTOC.js"></script>
+  <script type="text/javascript" src="../../js/scrolling.js"></script>
+  <script type="text/javascript" src="../../js/progressbar.js"></script>
+  <script type="text/javascript" src="../../js/toc.js"></script>
+  <script type="text/javascript" src="../../js/question.js"></script>
+  <script type="text/javascript" src="../../js/smoothscroll.js"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/prettyPrint.css">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+
+<body class="sideNavVisible">
+
+  <div class="fixedHeaderContainer">
+    <div class="wrapper">
+      <a href="https://portal.mycodecentral.com/my/" target="_self"><img src="../logo.png" alt="Code Central"></a>
+    </div>
+  </div>
+
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+
+      <div class="container docsNavContainer">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navGroups">
+                <div class="navGroup">
+                  <a href="#top">
+                    <h3 class="navGroupCategoryTitle">WD 2</h3>
+                  </a>
+                  <ul id="toc">
+                    <progress id="pb" value="0" max="100"></progress>
+                    <div id="tocDynamic"></div>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+        </nav>
+      </div>
+
+      <div class="container mainContainer" id="top">
+        <div class="wrapper">
+          <div class="post">
+
+            <header class="postHeader">
+              <h1 class="postHeaderTitle">HTML Calculator</h1>
+            </header>
+
+            <article id="mainContent">
+              <p>
+                Hello! Today you are going to make <a target="_blank" href="https://mm909.github.io/SpeedCodeHTMLCalc/"><u><strong>THIS!</strong></u></a> <br>
+                All you'll need is a little <code class="prettifyJS">JS</code>, <code class="prettifyCSS">CSS</code>, and <code class="prettifyHTML">HTML</code> knowlage to get started :) <br>
+                <code class="prettifySQL">Happy Coding ۜ\(סּںסּَ` )/ۜ </code>
+              </p>
+
+              <section id="section_learninggoals">
+                <a id="_learninggoals">
+                  <h2>
+                    <codeG>-- Road map -- </codeG>
+                  </h2>
+                </a>
+                <ol>
+                  <li><code class="prettifyHTML">HTML</code></li>
+                  <ol>
+                    <li><code class="prettifyHTML">File Setup</code></li>
+                    <li><code class="prettifyHTML">Code Setup</code></li>
+                    <li><code class="prettifyHTML">Comments</code></li>
+                    <li><code class="prettifyHTML">Textbox</code></li>
+                    <li><code class="prettifyHTML">Table</code></li>
+                    <li><code class="prettifyHTML">Table Data</code></li>
+                    <li><code class="prettifyHTML">Buttons</code></li>
+                  </ol>
+                  <li><code class="prettifyJS">JS</code></li>
+                  <ol>
+                    <li><code class="prettifyJS">insert(num)</code></li>
+                    <li><code class="prettifyJS">equal()</code></li>
+                    <li><code class="prettifyJS">empty()</code></li>
+                    <li><code class="prettifyJS">back()</code></li>
+                  </ol>
+                  <li><code class="prettifyCSS">CSS</code></li>
+                  <ol>
+                    <li><code class="prettifyCSS">*</code></li>
+                    <li><code class="prettifyCSS">.main</code></li>
+                    <li><code class="prettifyCSS">.button</code></li>
+                    <li><code class="prettifyCSS">.button:hover</code></li>
+                    <li><code class="prettifyCSS">.textview</code></li>
+                    <li><code class="prettifyCSS">html</code></li>
+                  </ol>
+                </ol>
+              </section>
+
+              <section id="section_HTML">
+                <a id="_HTML">
+                  <h1>
+                    <codeG>HTML</codeG>
+                  </h1>
+                </a>
+                <a id="0FSU">
+                  <h2><code class="prettifyHTML">File Setup</code></h2>
+                </a>
+
+                <p>
+                  By now you should be familiar with most of the HTML setup steps. The visual aids are gone, the training wheels are off! If you need help <code class="prettifySQL">you can always ask an instructor for help! ۜ\(סּںסּَ` )/ۜ</code>
+                </p>
+                <p>
+                  To get started <strong> create a new folder </strong> to store your files (<strong> Right click => New => Folder </strong>). You may name it whatever you'd like but make it something meaningful to you!
+                </p>
+                <p>
+                  Inside of the new folder <strong> create a new file </strong> and name it <code class="prettifyHTML">index.html</code> (<strong> Right click => New => Text document </strong>).
+                </p>
+
+                <a id="0CSU">
+                  <h2><code class="prettifyHTML">Code Setup</code></h2>
+                </a>
+                <p>Add the following code to <code class="prettifyHTML">index.html</code></p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;HTML Calc!&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;style>
+  &lt;/style>
+
+  &lt;script>
+  &lt;/script>
+
+  &lt;body&gt;
+    Hello, World!
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+                </div>
+                <p>This is the standard <code class="prettifyHTML">index.html</code> setup you have seen 100 times, <strong>but what's new?</strong></p>
+                <p>
+                  <code class="prettifyCSS">&lt;style>&lt;/style></code> tag holds our CSS code. <br>
+                  <code class="prettifyJS">&lt;script>&lt;/script></code> tag holds our JS code. <br>
+                  <!-- <code class="prettifyHTML">&lt;body>&lt;/body></code> tag holds our HTML code. <br> -->
+                  <br>
+                  This way we don't have to worry about making several different files. &#x1F389; <code class="prettifySQL">Yay!</code> &#x1F389;
+                </p>
+                <div class="paraSection">
+                  <a id="0C">
+                    <h2 style="margin-top:5px;"><code class="prettifyCOM">Comments</code></h2>
+                  </a>
+                  <ol>
+                    <li>You do not need to write any of the <code class="prettifyCOM">code in green.</code> <br> These are comments, <strong>the computer ignores them.</strong></li> <br>
+                    <li>It would be a good idea for you to <code class="prettifyCOM">&lt;!-- add your own comments. --></code> <br> This way you will know what is going on when you try to read your code later on!</li> <br>
+                    <li>Please <strong>add the following code</strong> to your <code class="prettifyHTML">index.html</code></li>
+                  </ol>
+                  <p>This <code class="prettifyHTML">div</code> will hold all of the buttons and text that we will see on the page.</p>
+                  <p><code class="prettifySQL">Add a comment about what the 'main' div is doing, or your favorite video game (סּںסּَ`)</code> </p>
+                </div>
+                <br>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;HTML Calc!&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;style>
+  &lt;/style>
+
+  &lt;script>
+  &lt;/script>
+
+  &lt;body&gt;
+    &lt;!-- Add the code below! -->
+    &lt;div class="main">
+      Hello, World!
+    &lt;/div>
+    &lt;!-- Add the code above! -->
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+                </div>
+                <a id="0TB">
+                  <h2><code class="prettifyHTML">Textbox</code></h2>
+                </a>
+                <p>We need a place for our numbers to appear. <i>Like the screen on a normal calculator.</i></p>
+                <p>Use the following code to get a <code class="prettifyHTML">textbox</code> for our calculator</p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;HTML Calc!&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;style>
+  &lt;/style>
+
+  &lt;script>
+  &lt;/script>
+
+  &lt;body&gt;
+    &lt;div class="main">
+      &lt;!-- Add the code below! -->
+      &lt;form name="form">
+        &lt;input class="textview" name="textview" type="text">
+      &lt;/form>
+      &lt;!-- Add the code above! -->
+    &lt;/div>
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+                </div>
+                <div class="paraSection paraCenter">
+                  <p>You should have the following </p>
+                  <hr>
+                  <form name="form">
+                    <input class="textview" name="textview" type="text">
+                  </form>
+                  <br>
+                  <p><code class="prettifySQL">Not much of a calculator... But it's a start!</code></p>
+                </div>
+                <a id="0TABLE">
+                  <h2><code class="prettifyHTML">Table</code></h2>
+                </a>
+                <p>We will use a <code class="prettifyHTML">Table</code> to arange the buttons.</p> <br>
+                <p><code class="prettifySQL">Why should we use a table?</code></p>
+                <p><code class="prettifySQL">How many rows should we make? Why that many?</code></p>
+                <p><code class="prettifyCOM">If you know &lt;!-- Comment your answer --> and <strong>Quiz an instructor!</strong></code> </p>
+                <p>You can use <a target="_blank" href="https://mm909.github.io/SpeedCodeHTMLCalc/"><u><strong>THIS!</strong></u></a> as a reference.</p>
+                <br>
+                <p>Add the following - <code class="prettifySQL">⦿⽘⦿</code> </p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;HTML Calc!&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;style>
+  &lt;/style>
+
+  &lt;script>
+  &lt;/script>
+
+  &lt;body&gt;
+    &lt;div class="main">
+      &lt;form name="form">
+        &lt;input class="textview" name="textview" type="text">
+      &lt;/form>
+      &lt;!-- Add the code below! -->
+      &lt;table>
+        &lt;tr>
+
+        &lt;/tr>
+        &lt;tr>
+
+        &lt;/tr>
+        &lt;tr>
+
+        &lt;/tr>
+        &lt;tr>
+
+        &lt;/tr>
+        &lt;tr>
+
+        &lt;/tr>
+      &lt;/table>
+      &lt;!-- Add the code above! -->
+    &lt;/div>
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+                </div>
+                <br>
+                <a id="0TABLEDATA">
+                  <h2><code class="prettifyHTML">Table Data</code></h2>
+                </a>
+                <p>Next we have to add a table data <code class="prettifyHTML">&lt;td>&lt;/td></code> for each button on the calculator </p>
+                <p>How many buttons are there on each row? <a target="_blank" href="https://mm909.github.io/SpeedCodeHTMLCalc/"><code class="prettifySQL"><u>Reference</u></code></a></p>
+                <ol>
+                  <li>Four: C, &lt;, /, *</li>
+                  <li>Four: 1, 2, 3, +</li>
+                  <li>Four: 4, 5, 6, -</li>
+                  <li>Four: 7, 8, 9, =</li>
+                  <li><strong>Two!</strong></li>
+                </ol>
+                <p><code class="prettifySQL">What are the last two buttons?</code></p>
+                <p>Add the following - <code class="prettifySQL">•|龴◡龴|•</code> </p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;HTML Calc!&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;style>
+  &lt;/style>
+
+  &lt;script>
+  &lt;/script>
+
+  &lt;body&gt;
+    &lt;div class="main">
+      &lt;form name="form">
+        &lt;input class="textview" name="textview" type="text">
+      &lt;/form>
+      &lt;!-- Add the code below! -->
+      &lt;table>
+        &lt;!-- Four: C, &lt;, /, * -->
+        &lt;tr>
+          &lt;td>&lt;/td>
+          &lt;td>&lt;/td>
+          &lt;td>&lt;/td>
+          &lt;td>&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td>&lt;/td>
+          &lt;td>&lt;/td>
+          &lt;td>&lt;/td>
+          &lt;td>&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td>&lt;/td>
+          &lt;td>&lt;/td>
+          &lt;td>&lt;/td>
+          &lt;td>&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td>&lt;/td>
+          &lt;td>&lt;/td>
+          &lt;td>&lt;/td>
+          &lt;td>&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td>&lt;/td>
+          &lt;td>&lt;/td>
+        &lt;/tr>
+      &lt;/table>
+      &lt;!-- Add the code above! -->
+    &lt;/div>
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+                </div>
+                <p><code class="prettifyCOM">Add comments reminding you what button belong to each row.</code> </p>
+
+              </section>
+
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="nav-footer" id="footer">
+  </footer>
+</body>
+
+</html>
