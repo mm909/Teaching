@@ -7,6 +7,16 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
   /* vertical-align: baseline */
 }
 
+face {
+  color: #f0ff76;
+  background-color: #2f3640;
+  border-radius: 3px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-size: 85%;
+  margin: 0;
+  padding: 3.2px 6.4px
+}
+
 body {
   color: #24292e;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;

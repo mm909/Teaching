@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CS</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/prettyPrint.css">
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<script type="text/javascript">
+  let input = ""
+  jQuery(document).ready(function() {
+    input = document.getElementById("psswd");
+  });
+  let show = false;
+
+  function dataRequest() {
+    console.log(input.value);
+    if (!show)
+      if (input.value == "LearnCode1") {
+        $("#answer").css("display", "block")
+        $("#answer").css("position", "relative")
+        show = true;
+        input.value = "";
+      } else {
+        $("#answer").css("display", "none")
+      }
+  }
+</script>
+
+<style media="screen">
+  #answer {
+    display:none;
+  }
+  .pass {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%)
+  }
+</style>
+
+<body>
+  <div class="paraSection paraCenter pass">
+    <input type="password" onkeyup="dataRequest()" id="psswd" size="30" maxlength="25"> <br> Hint: Henderson READYSHARE
+  </div>
+  <div id="answer">
+    <div class='CodeBoxL'>
+      <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+
+  &lt;head>
+    &lt;title>HTML Calc&lt;/title>
+  &lt;/head>
+
+  &lt;script>
+  function insert(num) {
+    document.form.textview.value = document.form.textview.value + num
+  }
+  function back() {
+    var exp = document.form.textview.value;
+    document.form.textview.value = exp.substring(0,exp.length-1)
+  }
+  function empty() {
+    document.form.textview.value ="";
+  }
+  function equal() {
+    let val = document.form.textview.value;
+    if(val){
+      document.form.textview.value = eval(val)
+    }
+  }
+  &lt;/script>
+
+  &lt;style>
+  * {
+      margin: 0px;
+      padding: 0px;
+    }
+    .main {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%)
+    }
+    .button {
+      width: 50px;
+      height: 50px;
+      font-size: 25;
+      margin: 2;
+      background: rgba(95,199,239,.90);
+      border:none;
+    }
+    .button:hover {
+      background: rgba(75,179,219,1);
+    }
+    .textview {
+      text-align: right;
+      width:192px;
+      height: 25px;
+      margin-left:2px;
+      font-size: 25;
+      padding: 5px;
+    }
+    html {
+      background: linear-gradient(#e66465, #9198e5)!important;
+      height:100%;
+    }
+  &lt;/style>
+
+    &lt;body>
+      &lt;div class="main">
+        &lt;form name="form">
+          &lt;input class="textview" name="textview" type="text">
+        &lt;/form>
+        &lt;table>
+          &lt;tr>
+            &lt;td>&lt;input class="button" type="button" onclick="empty()" value="C">&lt;/td>
+            &lt;td>&lt;input class="button" type="button" onclick="back()" value="<">&lt;/td>
+            &lt;td>&lt;input class="button" type="button" onclick="insert('/')" value="/">&lt;/td>
+            &lt;td>&lt;input class="button" type="button" onclick="insert('*')" value="*">&lt;/td>
+          &lt;/tr>
+          &lt;tr>
+            &lt;td>&lt;input class="button" type="button" onclick="insert(1)" value="1">&lt;/td>
+            &lt;td>&lt;input class="button" type="button" onclick="insert(2)" value="2">&lt;/td>
+            &lt;td>&lt;input class="button" type="button" onclick="insert(3)" value="3">&lt;/td>
+            &lt;td>&lt;input class="button" type="button" onclick="insert('+')" value="+">&lt;/td>
+          &lt;/tr>
+          &lt;tr>
+            &lt;td>&lt;input class="button" type="button" onclick="insert(4)" value="4">&lt;/td>
+            &lt;td>&lt;input class="button" type="button" onclick="insert(5)" value="5">&lt;/td>
+            &lt;td>&lt;input class="button" type="button" onclick="insert(6)" value="6">&lt;/td>
+            &lt;td>&lt;input class="button" type="button" onclick="insert('-')" value="-">&lt;/td>
+          &lt;/tr>
+          &lt;tr>
+            &lt;td>&lt;input class="button" type="button" onclick="insert(7)" value="7">&lt;/td>
+            &lt;td>&lt;input class="button" type="button" onclick="insert(8)" value="8">&lt;/td>
+            &lt;td>&lt;input class="button" type="button" onclick="insert(9)" value="9">&lt;/td>
+            &lt;td rowspan="5">&lt;input style="height:102px" class="button" type="button" onclick="equal()" value="=">&lt;/td>
+          &lt;/tr>
+          &lt;tr>
+            &lt;td colspan="2">&lt;input style="width:102px" class="button" type="button" onclick="insert(0)" value="0">&lt;/td>
+            &lt;td>&lt;input class="button" type="button" onclick="insert('.')" value=".">&lt;/td>
+        &lt;/table>
+      &lt;/div>
+    &lt;/body>
+&lt;/html></pre>
+    </div>
+  </div>
+</body>
+
+</html>

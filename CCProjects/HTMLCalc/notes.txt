@@ -3,3 +3,5 @@
 // 12:25am Finished JS section
 // 1:39am Finished most of it. Need to add final section and fix css stuff
 // End: 11/30/2018 1:39am
+
+// Start: 11/30/2018 2:37pm
