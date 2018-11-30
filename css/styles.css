@@ -4,7 +4,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
   font-size: 100%;
   margin: 0;
   padding: 0;
-  vertical-align: baseline
+  /* vertical-align: baseline */
 }
 
 body {
@@ -411,6 +411,18 @@ textB {
   padding: 2px;
   font-size: 150%;
   margin-bottom: 1em;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 .CodeBoxBuffer {

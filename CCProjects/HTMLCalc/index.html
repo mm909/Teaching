@@ -18,6 +18,40 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="../../css/prettyPrint.css">
   <link rel="stylesheet" href="../../css/styles.css">
+  <style>
+    .two{
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-25%) translateY(-50%)
+    }
+
+    .one {
+        width: 50px;
+        height: 50px;
+        font-size: 25;
+        margin: 2;
+        background: rgba(95,199,239,.90);
+        border:none;
+      }
+      .one:hover {
+        background: rgba(75,179,219,1);
+      }
+      .four {
+        text-align: right;
+        width:192px;
+        height: 25px;
+        margin-left:2px;
+        font-size: 25;
+        padding: 5px;
+      }
+      .three {
+        background: linear-gradient(#e66465, #9198e5)!important;
+        height:500px;
+        width: 500px;
+        margin:auto;
+      }
+    </style>
 </head>
 
 <body class="sideNavVisible">
@@ -85,6 +119,7 @@
                   </ol>
                   <li><code class="prettifyJS">JS</code></li>
                   <ol>
+                    <li><code class="prettifyJS">Functions</code></li>
                     <li><code class="prettifyJS">insert(num)</code></li>
                     <li><code class="prettifyJS">equal()</code></li>
                     <li><code class="prettifyJS">empty()</code></li>
@@ -105,7 +140,7 @@
               <section id="section_HTML">
                 <a id="_HTML">
                   <h1>
-                    <codeG>HTML</codeG>
+                    <codeG>(~˘▾˘)~ HTML</codeG>
                   </h1>
                 </a>
                 <a id="0FSU">
@@ -351,21 +386,26 @@
   &lt;/body&gt;
 &lt;/html&gt;</pre>
                 </div>
-                  <p><code class="prettifyCOM">Add comments reminding you what button belong in each row.</code> </p>
-                  <a id="0BUTTONS">
-                    <h2><code class="prettifyHTML">Buttons</code></h2>
-                  </a>
-                  <p>Time to <strong>add some buttons</strong> to our calculator!</p>
-                  <div class="paraSection">
+                <p><code class="prettifyCOM">Add comments reminding you what button belong in each row.</code> </p>
+                <a id="0BUTTONS">
+                  <h2><code class="prettifyHTML">Buttons</code></h2>
+                </a>
+                <p>Time to <strong>add some buttons</strong> to our calculator!</p>
+                <div class="paraSection">
                   <p>
-                    We are going to use <code class="prettifyHTML">input</code> to make them like so: <br>
-                    <code class="prettifyHTML">&lt;input class="button" type="button" onclick="" id="" value=""></code>
+                    We are going to use <code class="prettifyHTML">input</code> to make all of the buttons.<br>
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;input class="button" type="button" onclick="" value=""></pre>
+                    </div>
+                    <!-- <code class="prettifyHTML">&lt;input class="button" type="button" onclick="" value=""></code> -->
                   </p>
                   <p>
-                    <code class="prettifyHTML">type="button"</code> makes our 'input' a button. <input class="button" type="button" onclick="" id="" value="Button!"> <br>
+                    <code class="prettifyHTML">type="button"</code> makes our 'input' a button. <input class="button1" type="button" onclick="" id="" value="Button!"> <br>
                     <code class="prettifyHTML">class="button"</code> is so that we can style our button later.<br>
-                    <code class="prettifyHTML">id="" and value=""</code> are how we can identify our button.<br>
+                    <!-- <code class="prettifyHTML">id="" and value=""</code> are how we can identify our button.<br> -->
                   </p>
+                  <br>
                   <div class="paraCenter">
                     <p>
                       What do you think <code class="prettifyJS">onclick=""</code> does?<br>
@@ -397,32 +437,32 @@
       &lt;!-- Add the code below! -->
       &lt;table>
         &lt;tr>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
         &lt;/tr>
         &lt;tr>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
         &lt;/tr>
         &lt;tr>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
         &lt;/tr>
         &lt;tr>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
         &lt;/tr>
         &lt;tr>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="">&lt;/td>
         &lt;/tr>
       &lt;/table>
       &lt;!-- Add the code above! -->
@@ -479,7 +519,11 @@
                   <p>
                     To add text to our buttons we need to change the <code class="prettifyJS">value=""</code> attribute. <br>
                     For the "1" button we change value to <code class="prettifyJS">value="1"</code> <br>
-                    Like so: <code class="prettifyHTML">&lt;td&lt;input class="button1" type="button" id="" onclick="" value="1">&lt;/td></code> <br>
+                    <div class='CodeBoxL'>
+                      <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;td>&lt;input class="button1" type="button" id="" onclick="" <u>value="1"</u> >&lt;/td></pre>
+                    </div>
+                    <!-- <code class="prettifyHTML">&lt;td&lt;input class="button1" type="button" id="" onclick="" <u>value="1"</u> >&lt;/td></code> <br> -->
                     <!-- <strong>Do this for all the <i>NUMBERS!</i> </strong> -->
                   </p>
                 </div>
@@ -507,32 +551,32 @@
       &lt;!-- Add the code below! -->
       &lt;table>
         &lt;tr>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="C">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="/">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="*">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="C">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="<">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="/">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="*">&lt;/td>
         &lt;/tr>
         &lt;tr>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="1">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="2">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="3">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="+">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="1">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="2">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="3">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="+">&lt;/td>
         &lt;/tr>
         &lt;tr>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="4">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="5">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="6">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="-">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="4">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="5">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="6">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="-">&lt;/td>
         &lt;/tr>
         &lt;tr>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="7">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="8">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="9">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="=">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="7">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="8">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="9">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="=">&lt;/td>
         &lt;/tr>
         &lt;tr>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value="0">&lt;/td>
-          &lt;td>&lt;input class="button" type="button" id="" onclick="" value=".">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="0">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value=".">&lt;/td>
         &lt;/tr>
       &lt;/table>
       &lt;!-- Add the code above! -->
@@ -540,8 +584,644 @@
   &lt;/body&gt;
 &lt;/html&gt;</pre>
                 </div>
+                <p>Our buttons now have some text! <code class="prettifySQL">(づ｡◕‿‿◕｡)づ</code> </p>
+                <div class="paraSection">
+                  <div class="main">
+                    <form name="form">
+                      <input class="textview1" name="textview" type="text">
+                    </form>
+                    <table>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="" value="C"></td>
+                        <td><input class="button1" type="button" onclick="" value="<"></td>
+                        <td><input class="button1" type="button" onclick="" value="/"></td>
+                        <td><input class="button1" type="button" onclick="" value="*"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="" value="1"></td>
+                        <td><input class="button1" type="button" onclick="" value="2"></td>
+                        <td><input class="button1" type="button" onclick="" value="3"></td>
+                        <td><input class="button1" type="button" onclick="" value="+"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="" value="4"></td>
+                        <td><input class="button1" type="button" onclick="" value="5"></td>
+                        <td><input class="button1" type="button" onclick="" value="6"></td>
+                        <td><input class="button1" type="button" onclick="" value="-"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="" value="7"></td>
+                        <td><input class="button1" type="button" onclick="" value="8"></td>
+                        <td><input class="button1" type="button" onclick="" value="9"></td>
+                        <td><input class="button1" type="button" onclick="" value="="></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="" value="0"></td>
+                        <td><input class="button1" type="button" onclick="" value="."></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <h1>We are done!</h1>
+                <p> <code class="prettifySQL">With programming HTML:)</code> </p>
+                <p>Next we will add some <code class="prettifyJS">(ﾉ◕ヮ◕)ﾉ JS</code> to our program so that the buttons actually do things. </p>
               </section>
+              <section id="section_JS">
+                <a id="_JS">
+                  <h1>
+                    <codeG>(ﾉ◕ヮ◕)ﾉ JS</codeG>
+                  </h1>
+                </a>
+                <p><code class="prettifyJS">JS will make our buttons interactable.</code></p>
+                <a id="0FUN">
+                  <h2><code class="prettifyHTML">Functions</code></h2>
+                </a>
+                <p>
+                  A function is a block of code that <strong>does the same task whenever you tell it to.</strong>
+                  Kind of like training your dog to do tricks. You say sit, the dog sits. You say stay, the dog stays.
+                  Sit and stay are basically <code class="prettifySQL">'dog functions.'</code>
+                </p>
+                <p><code class="prettifySQL">What is another example of a 'dog function?'</code> </p>
+                <br>
+                <p>Computer functions look a little different. Lets break it down.</p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-js CodeBoxBuffer">
+function addOne(num) { // ~(˘▾˘~)
+  num++;
+}
+</pre>
+                </div>
+                <p><code class="prettifySQL">What do you think this function is does? <strong>Quiz an instructor!</strong></code> </p>
+                <p>We have to tell the computer that we are making a new function. <br> We do this by starting our code with <code class="prettifyJS">function</code> </p>
+                <p>When we want to 'call' this function we will have use its name. <br> This function has a name of <code class="prettifyJS">addOne</code></p>
+                <p>Sometimes functions need some extra information. Like where to draw the hero or the health of an enemy. <br> This function needs <strong> one peice of extra informaiton </strong><code class="prettifyJS">(num)</code></p>
+                <p>Finally we need instructions for our function to follow. <br> This function's instructions are inbetween two curly brackets <strong>{</strong> <code class="prettifyJS">num++;</code> <strong>}</strong></p>
+                <p>There are four different <code class="prettifySQL">functions</code> we have to write.</p>
+                <ol>
+                  <li>insert(num)</li>
+                  <li>equal()</li>
+                  <li>empty()</li>
+                  <li>back()</li>
+                </ol>
+                <p><code class="prettifyJS">insert(num)</code> <br> insert(num) will take in a number and add it to the text box. <br> Apply this function to <strong>1, 2, 3, 4, 5, 6, 7, 8, 9, '/', '*', '-', '+', and '.'</strong> </p>
+                <p><code class="prettifyJS">equal()</code> <br> equal() will evaulate the expression in the text box. <br> Apply this function to <strong>'='</strong></p>
+                <p><code class="prettifyJS">back()</code> <br> back() will act like a 'backspace' for our calculator. <br> Apply this function to <strong>'&lt;'</strong></p>
+                <p><code class="prettifyJS">empty()</code> <br> empty() will clear out the text in our text box. <br> <code class="prettifySQL">What button will this function apply to?</code></p>
+                <a id="0INSERT">
+                  <h2><code class="prettifyCSS">insert(num)</code></h2>
+                </a>
 
+                <p>Find the <code class="prettifyHTML">script</code> tags you wrote earlier. This is where we will write all of our <code class="prettifyJS">JS Functions</code></p>
+                <p>Write the following code.</p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-js CodeBoxBuffer">
+&lt;script>
+  function insert(num) {
+    document.form.textview.value = document.form.textview.value + num
+  }
+&lt;/script></pre>
+                </div>
+                <p><code class="prettifySQL">How do you change the name of the funciton? <strong>Ask an instructor!</strong></code> </p>
+                <p>Now that the function is written we can attach it to our buttons.</p>
+
+                <p>We will add this function to the <code class="prettifyJS">onclick=""</code> part of every button that it needs to be applied to. (Look above for list)</p>
+                <p>Do it just like this for all of the <strong>numbers.</strong> </p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;td>&lt;input class="button" type="button" <u>onclick="insert(1)"</u> value="1">&lt;/td>
+</pre>
+                </div>
+                <p> <code class="prettifyJS">(ᵔᴥᵔ)</code> <strong>For '/', '*', '-', '+', and '.'</strong> we need to use quotes <code class="prettifyCSS">''</code></p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;td>&lt;input class="button" type="button" <u>onclick="insert('+')"</u> value="1">&lt;/td>
+</pre>
+                </div>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;HTML Calc!&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;style>
+  &lt;/style>
+
+  &lt;script>
+  &lt;/script>
+
+  &lt;body&gt;
+    &lt;div class="main">
+      &lt;form name="form">
+        &lt;input class="textview" name="textview" type="text">
+      &lt;/form>
+      &lt;!-- Add the code below! -->
+      &lt;table>
+        &lt;tr>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="C">&lt;/td> &lt;!-- No onclick="insert()" function here! -->
+          &lt;td>&lt;input class="button" type="button" onclick="" value="&lt;">&lt;/td> &lt;!-- No onclick="insert()" function here! -->
+          &lt;td>&lt;input class="button" type="button" onclick="insert('/')" value="/">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="insert('*')" value="*">&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td>&lt;input class="button" type="button" onclick="insert(1)" value="1">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="insert(2)" value="2">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="insert(3)" value="3">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="insert('+')" value="+">&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td>&lt;input class="button" type="button" onclick="insert(4)" value="4">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="insert(5)" value="5">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="insert(6)" value="6">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="insert('-')" value="-">&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+          &lt;td>&lt;input class="button" type="button" onclick="insert(7)" value="7">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="insert(8)" value="8">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="insert(9)" value="9">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="" value="=">&lt;/td> &lt;!-- No onclick="insert()" function here! -->
+        &lt;/tr>
+        &lt;tr>
+          &lt;td>&lt;input class="button" type="button" onclick="insert(0)" value="0">&lt;/td>
+          &lt;td>&lt;input class="button" type="button" onclick="insert('.')" value=".">&lt;/td>
+        &lt;/tr>
+      &lt;/table>
+      &lt;!-- Add the code above! -->
+    &lt;/div>
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+                </div>
+                <br>
+                <p>&#x1F389; <code class="prettifySQL">Congrats!</code> &#x1F389; We now have a super inefficient keypad. <code class="prettifyCOM">¯\_(ツ)_/¯</code></p>
+                <div class="paraSection">
+                  <script type="text/javascript">
+                    function insert1(num) {
+                      document.form1.textview1.value = document.form1.textview1.value + num
+                    }
+                  </script>
+                  <div class="main">
+                    <form name="form1">
+                      <input class="textview1" name="textview1" type="text">
+                    </form>
+                    <table>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="" value="C"></td>
+                        <td><input class="button1" type="button" onclick="" value="<"></td>
+                        <td><input class="button1" type="button" onclick="insert1('/')" value="/"></td>
+                        <td><input class="button1" type="button" onclick="insert1('*')" value="*"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert1(1)" value="1"></td>
+                        <td><input class="button1" type="button" onclick="insert1(2)" value="2"></td>
+                        <td><input class="button1" type="button" onclick="insert1(3)" value="3"></td>
+                        <td><input class="button1" type="button" onclick="insert1('+')" value="+"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert1(4)" value="4"></td>
+                        <td><input class="button1" type="button" onclick="insert1(5)" value="5"></td>
+                        <td><input class="button1" type="button" onclick="insert1(6)" value="6"></td>
+                        <td><input class="button1" type="button" onclick="insert1('-')" value="-"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert1(7)" value="7"></td>
+                        <td><input class="button1" type="button" onclick="insert1(8)" value="8"></td>
+                        <td><input class="button1" type="button" onclick="insert1(9)" value="9"></td>
+                        <td><input class="button1" type="button" onclick="" value="="></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert1(0)" value="0"></td>
+                        <td><input class="button1" type="button" onclick="insert1('.')" value="."></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <br>
+                <p>We are actually only <strong> one function away</strong> from making our calculator work. Everything else just makes it easier to use and look better.</p>
+
+                <a id="0EQL">
+                  <h2><code class="prettifyCSS">equal()</code></h2>
+                </a>
+                <p>This function will do the 'heavy lifting' for our calculator.</p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-js CodeBoxBuffer">
+&lt;script>
+  function equal() {
+    let val = document.form.textview.value;
+    if(val){
+      document.form.textview.value = eval(val)
+    }
+  }
+&lt;/script></pre>
+                </div>
+
+                <p>Next add the funciton to the '=' button.</p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-html CodeBoxBuffer">
+&lt;td>&lt;input class="button" type="button" onclick="equal()" value="=">&lt;/td>
+</pre>
+                </div>
+                <p>Check it out! <code class="prettifySQL">(づ￣ ³￣)づ</code> </p>
+                <div class="paraSection">
+                  <script type="text/javascript">
+                    function insert2(num) {
+                      let box = document.form2.textview2.value;
+                      document.form2.textview2.value = box + num;
+                    }
+
+                    function equal2() {
+                      let box = document.form2.textview2.value;
+                      if (box) {
+                        document.form2.textview2.value = eval(box)
+                      }
+                    }
+                  </script>
+                  <div class="main">
+                    <form name="form2">
+                      <input class="textview2" name="textview2" type="text">
+                    </form>
+                    <table>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="" value="C"></td>
+                        <td><input class="button1" type="button" onclick="" value="<"></td>
+                        <td><input class="button1" type="button" onclick="insert2('/')" value="/"></td>
+                        <td><input class="button1" type="button" onclick="insert2('*')" value="*"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert2(1)" value="1"></td>
+                        <td><input class="button1" type="button" onclick="insert2(2)" value="2"></td>
+                        <td><input class="button1" type="button" onclick="insert2(3)" value="3"></td>
+                        <td><input class="button1" type="button" onclick="insert2('+')" value="+"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert2(4)" value="4"></td>
+                        <td><input class="button1" type="button" onclick="insert2(5)" value="5"></td>
+                        <td><input class="button1" type="button" onclick="insert2(6)" value="6"></td>
+                        <td><input class="button1" type="button" onclick="insert2('-')" value="-"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert2(7)" value="7"></td>
+                        <td><input class="button1" type="button" onclick="insert2(8)" value="8"></td>
+                        <td><input class="button1" type="button" onclick="insert2(9)" value="9"></td>
+                        <td><input class="button1" type="button" onclick="equal2()" value="="></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert2(0)" value="0"></td>
+                        <td><input class="button1" type="button" onclick="insert2('.')" value="."></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <br>
+                <p>You have offically made a HTML/JS calculator. We could stop here but our calculator isn't supper easy to use and it looks kinda ugly.</p>
+                <p>The next sections will address this:)</p>
+                <div class="paraSection paraCenter">
+                  <p style="margin:0px;"><code class="prettifySQL">What is a function? <strong>Explain it to an instructor. </strong></code></p>
+                  <p style="margin:0px;"><i>or</i></p>
+                  <p style="margin:0px;"><code class="prettifyCOM">Write a comment explaining it.</code></p>
+                </div>
+                <br>
+                <div class="paraSection">
+                  <div class="paraCenter">
+                    <h2 style="margin-top:7px; color:#ed5565">Warning!</h2>
+                    <p>After this point I will give you only <strong>small sections of source code.</strong> <br> It is up to you to fill in the gaps. <code class="prettifySQL"> ﴾͡๏̯͡๏﴿ O'RLY? </code></p>
+                    <p>You may still ask an insturctor for help but <strong>no source code will be given.</strong></p>
+                    <code class="prettifySQL">Happy Coding ۜ\(סּںסּَ` )/ۜ </code>
+                  </div>
+                </div>
+                <br>
+                <a id="0EMPTY">
+                  <h2><code class="prettifyCSS">empty()</code></h2>
+                </a>
+                <p>The empty function will reset our text box. Just like 'Clear' on a calculator.</p>
+                <p>Add this code to the script section.</p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-js CodeBoxBuffer">
+&lt;script>
+  ????? empty() {
+    document.form.textview.value ="";
+  }
+&lt;/script></pre>
+                </div>
+                <code class="prettifySQL">Something is missing! What?</code>
+                <p>Make sure to add the correction to your code.</p>
+                <p>Next: Attach the "empty()" function to the 'C' button. <br> <strong>Just like we did with equal()!</strong> </p>
+                <br>
+                <p>We now have the following:</p>
+                <div class="paraSection">
+                  <script type="text/javascript">
+                    function insert3(num) {
+                      let box = document.form3.textview3.value;
+                      document.form3.textview3.value = box + num;
+                    }
+
+                    function equal3() {
+                      let box = document.form3.textview3.value;
+                      if (box) {
+                        document.form3.textview3.value = eval(box)
+                      }
+                    }
+
+                    function a() {
+                      document.form3.textview3.value = "";
+                    }
+                  </script>
+                  <div class="main">
+                    <form name="form3">
+                      <input class="textview3" name="textview3" type="text">
+                    </form>
+                    <table>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="a()" value="C"></td>
+                        <td><input class="button1" type="button" onclick="" value="<"></td>
+                        <td><input class="button1" type="button" onclick="insert3('/')" value="/"></td>
+                        <td><input class="button1" type="button" onclick="insert3('*')" value="*"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert3(1)" value="1"></td>
+                        <td><input class="button1" type="button" onclick="insert3(2)" value="2"></td>
+                        <td><input class="button1" type="button" onclick="insert3(3)" value="3"></td>
+                        <td><input class="button1" type="button" onclick="insert3('+')" value="+"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert3(4)" value="4"></td>
+                        <td><input class="button1" type="button" onclick="insert3(5)" value="5"></td>
+                        <td><input class="button1" type="button" onclick="insert3(6)" value="6"></td>
+                        <td><input class="button1" type="button" onclick="insert3('-')" value="-"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert3(7)" value="7"></td>
+                        <td><input class="button1" type="button" onclick="insert3(8)" value="8"></td>
+                        <td><input class="button1" type="button" onclick="insert3(9)" value="9"></td>
+                        <td><input class="button1" type="button" onclick="equal3()" value="="></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert3(0)" value="0"></td>
+                        <td><input class="button1" type="button" onclick="insert3('.')" value="."></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <br>
+                <a id="0BS">
+                  <h2><code class="prettifyCSS">back()</code></h2>
+                </a>
+                <p>The back() function will 'backspace' our input</p>
+                <p>Add this code to the script section.</p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-js CodeBoxBuffer">
+&lt;script>
+function ????? () {
+  var exp = document.form.textview.value;
+  document.form.textview.value = exp.substring(0,exp.length-1)
+}
+&lt;/script></pre>
+                </div>
+                <code class="prettifySQL">Something is missing! What?</code>
+                <p>Make sure to add the correction to your code.</p>
+                <p>Next: Attach the "back()" function to the '&lt;' button. <br> <strong>Just like we did with equal()!</strong> </p>
+                <br>
+                <p>We now have the following:</p>
+                <div class="paraSection">
+                  <script type="text/javascript">
+                    function insert4(num) {
+                      let box = document.form4.textview4.value;
+                      document.form4.textview4.value = box + num;
+                    }
+
+                    function equal4() {
+                      let box = document.form4.textview4.value;
+                      if (box) {
+                        document.form4.textview4.value = eval(box)
+                      }
+                    }
+
+                    function clear4() {
+                      document.form4.textview4.value = "";
+                    }
+
+                    function back4() {
+                      var exp = document.form4.textview4.value;
+                      document.form4.textview4.value = exp.substring(0, exp.length - 1)
+                    }
+                  </script>
+                  <div class="main">
+                    <form name="form4">
+                      <input class="textview4" name="textview4" type="text">
+                    </form>
+                    <table>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="clear4()" value="C"></td>
+                        <td><input class="button1" type="button" onclick="back4()" value="<"></td>
+                        <td><input class="button1" type="button" onclick="insert4('/')" value="/"></td>
+                        <td><input class="button1" type="button" onclick="insert4('*')" value="*"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert4(1)" value="1"></td>
+                        <td><input class="button1" type="button" onclick="insert4(2)" value="2"></td>
+                        <td><input class="button1" type="button" onclick="insert4(3)" value="3"></td>
+                        <td><input class="button1" type="button" onclick="insert4('+')" value="+"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert4(4)" value="4"></td>
+                        <td><input class="button1" type="button" onclick="insert4(5)" value="5"></td>
+                        <td><input class="button1" type="button" onclick="insert4(6)" value="6"></td>
+                        <td><input class="button1" type="button" onclick="insert4('-')" value="-"></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert4(7)" value="7"></td>
+                        <td><input class="button1" type="button" onclick="insert4(8)" value="8"></td>
+                        <td><input class="button1" type="button" onclick="insert4(9)" value="9"></td>
+                        <td><input class="button1" type="button" onclick="equal4()" value="="></td>
+                      </tr>
+                      <tr>
+                        <td><input class="button1" type="button" onclick="insert4(0)" value="0"></td>
+                        <td><input class="button1" type="button" onclick="insert4('.')" value="."></td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+                <br>
+                <h3><strong> Our calculator is 100% functional!</strong> <code class="prettifySQL">(ง°○°)ง</code></h3>
+                <p>But it's ugly <code class="prettifySQL"> ༼ つ ಥ_ಥ ༽つ</code> lets fix that.</p>
+              </section>
+              <section id="section_CSS">
+                <a id="_CSS">
+                  <h1>
+                    <codeG>♥‿♥ CSS</codeG>
+                  </h1>
+                </a>
+                <p><code class="prettifyCSS">CSS will fix the ugly ♥‿♥</code></p>
+                <a id="0All">
+                  <h2><code class="prettifyCSS">*</code></h2>
+                </a>
+                <p>
+                  The '*' symbol is a wildcard meaning that it stands for everything (like a wild in Uno). <br> <strong> Any styles we put here will be applied to everything!</strong> <br> Most of the time this is used just to reset everything. Add
+                  the following code inside of the <code class="prettifyCSS">style</code> tags.
+                </p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-css CodeBoxBuffer">
+&lt;style>
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+&lt;/style></pre>
+                </div>
+                <a id="0MAIN">
+                  <h2><code class="prettifyCSS">.main</code></h2>
+                </a>
+                <p>
+                  The 'main' class holds the text box and all the buttons. Lets center it.
+                </p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-css CodeBoxBuffer">
+&lt;style>
+  .main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%)
+  }
+&lt;/style></pre>
+                </div>
+                <p>
+                  We use the '.' to select all of the elements with the same <strong> class! </strong> <br>
+                  Next section you will only have the styling, add the correct slector to the code.
+                </p>
+                <a id="0button">
+                  <h2><code class="prettifyCSS">.button</code></h2>
+                </a>
+                <p>
+                  The 'button' class is applied to each button on our calculator.
+                  <strong>Notice: You have to add some code! <code class="prettifySQL">⚆ _ ⚆</code></strong> Look at the .main CSS code for hints.
+                </p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-css CodeBoxBuffer">
+&lt;style>
+  ????? {
+    width: 50px;
+    height: 50px;
+    font-size: 25;
+    margin: 2;
+    background: rgba(95,199,239,.90);
+    border:none;
+  }
+&lt;/style></pre>
+                </div>
+                <p>
+                  Lets add a hover effect to our button. <br> <br>
+                  This is how I would add a hover effect to a class called "notAButton." <br>
+                  <strong> .notAButton:hover { ... } </strong> <br>
+                  How do you add that effect to the class "button?"
+                </p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-css CodeBoxBuffer">
+&lt;style>
+  ?????:????? {
+    background: rgba(75,179,219,1);
+  }
+&lt;/style></pre>
+                </div>
+                <a id="0textView">
+                  <h2><code class="prettifyCSS">.textview</code></h2>
+                </a>
+                <p>
+                  The "textview" class is applied to the textbox. <br> Lets make it the same size as everything else. <br>
+                  <strong>Notice: You have to add some code! (ಥ﹏ಥ) </strong> Look at the button CSS code for hints.
+                </p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-css CodeBoxBuffer">
+&lt;style>
+  ????? {
+    text-align: right;
+    /* Set the width to 192px */
+    /* Set the height to 25px */
+    margin-left:2px;
+    font-size: 25;
+    padding: 5px;
+  }
+&lt;/style></pre>
+                </div>
+                <a id="0HTMLCSS">
+                  <h2><code class="prettifyCSS">html</code></h2>
+                </a>
+                <p>
+                  "html" applies to everything that the <code class="prettifyHTML">&lt;html>&lt;/html></code> tags wrap. (basically everything)
+                </p>
+                <div class='CodeBoxL'>
+                  <pre class="prettyprint linenums lang-css CodeBoxBuffer">
+&lt;style>
+  html {
+    background: linear-gradient(#e66465, #9198e5);
+    height:100%;
+  }
+&lt;/style></pre>
+                </div>
+              </section>
+              <section id="section_Final">
+                <a id="_Final">
+                  <h1>
+                    <codeG>\ (•◡•) / Final!</codeG>
+                  </h1>
+                </a>
+                <script>
+                  function three(num) {
+                  document.a.b.value = document.a.b.value + num
+                }
+                function two() {
+                  var exp = document.a.b.value;
+                  document.a.b.value = exp.substring(0,exp.length-1)
+                }
+                function one() {
+                  document.a.b.value ="";
+                }
+                function four() {
+                  let val = document.a.b.value;
+                  if(val){
+                    document.a.b.value = eval(val)
+                  }
+                }
+                </script>
+
+                <div class="three">
+                  <div class="two">
+                    <form name="a">
+                      <input class="four" name="b" type="text">
+                    </form>
+                    <table>
+                      <tr>
+                        <td><input id="c" class="one" type="button" onclick="one()" value="C"></td>
+                        <td><input id="<" class="one" type="button" onclick="two()" value="<"></td>
+                        <td><input id="/" class="one" type="button" onclick="three('/')" value="/"></td>
+                        <td><input id="*" class="one" type="button" onclick="three('*')" value="*"></td>
+                      </tr>
+                      <tr>
+                        <td><input id="1" class="one" type="button" onclick="three(1)" value="1"></td>
+                        <td><input id="2" class="one" type="button" onclick="three(2)" value="2"></td>
+                        <td><input id="3" class="one" type="button" onclick="three(3)" value="3"></td>
+                        <td><input id="+" class="one" type="button" onclick="three('+')" value="+"></td>
+                      </tr>
+                      <tr>
+                        <td><input id="4" class="one" type="button" onclick="three(4)" value="4"></td>
+                        <td><input id="5" class="one" type="button" onclick="three(5)" value="5"></td>
+                        <td><input id="6" class="one" type="button" onclick="three(6)" value="6"></td>
+                        <td><input id="-" class="one" type="button" onclick="three('-')" value="-"></td>
+                      </tr>
+                      <tr>
+                        <td><input id="7" class="one" type="button" onclick="three(7)" value="7"></td>
+                        <td><input id="8" class="one" type="button" onclick="three(8)" value="8"></td>
+                        <td><input id="9" class="one" type="button" onclick="three(9)" value="9"></td>
+                        <td rowspan="3"><input style="height:100px;" id="=" class="one" type="button" onclick="four()" value="="></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><input style="width:100px;" id="0" class="one" type="button" onclick="three(0)" value="0"></td>
+                        <td><input id="." class="one" type="button" onclick="insert('.')" value="."></td>
+                    </table>
+                  </div>
+                </div>
+
+              </section>
             </article>
           </div>
         </div>
