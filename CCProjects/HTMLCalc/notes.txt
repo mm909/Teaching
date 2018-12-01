@@ -5,3 +5,5 @@
 // End: 11/30/2018 1:39am
 
 // Start: 11/30/2018 2:37pm
+// Finished making all content and cleaned it all up. Added instructor cheat sheet 
+// Finished: 11/30/2018 3:53pm
