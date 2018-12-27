@@ -1006,7 +1006,7 @@
     if($username == $table_users && ($password == $table_password)) {
       // Ser the session to the logged in user
       $_SESSION['user'] = $username;
-      header("location: home.php");
+      header("location:home.php");
     } else {
       Print '&lt;script>alert("Incorrect Password!");&lt;/script>'
       Print '&lt;script>window.location.assign("login.php")&lt;/script>'
@@ -1260,7 +1260,7 @@ if(exists > 0){ // If there is a username
   if($username == $table_users && ($password == $table_password)) {
     // Ser the session to the logged in user
     $_SESSION['user'] = $username;
-    header("location: home.php");
+    header("location:home.php");
   } else {
     Print '&lt;script>alert("Incorrect Password!");&lt;/script>'
     Print '&lt;script>window.location.assign("login.php")&lt;/script>'
@@ -1509,7 +1509,7 @@ if(exists > 0){ // If there is a username
   if($username == $table_users && ($password == $table_password)) {
     // Ser the session to the logged in user
     $_SESSION['user'] = $username;
-    header("location: home.php");
+    header("location:home.php");
   } else {
     Print '&lt;script>alert("Incorrect Password!");&lt;/script>'
     Print '&lt;script>window.location.assign("login.php")&lt;/script>'
@@ -1787,7 +1787,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if($username == $table_users && ($password == $table_password)) {
       // Ser the session to the logged in user
       $_SESSION['user'] = $username;
-      header("location: home.php");
+      header("location:home.php");
     } else {
       Print '&lt;script>alert("Incorrect Password!");&lt;/script>'
       Print '&lt;script>window.location.assign("login.php")&lt;/script>'
@@ -1955,9 +1955,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     mysqli_query($con, "INSERT INTO list (details, date_posted, time_posted, public)
                     VALUES ('$details', '$date', '$time', '$decision')");
-    header(location:home.php);
+    header("location:home.php");
   } else {
-    header(location:home.php);
+    header("location:home.php");
   }
 ?>
 </pre>
@@ -2055,7 +2055,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if($username == $table_users && ($password == $table_password)) {
       // Ser the session to the logged in user
       $_SESSION['user'] = $username;
-      header("location: home.php");
+      header("location:home.php");
     } else {
       Print '&lt;script>alert("Incorrect Password!");&lt;/script>'
       Print '&lt;script>window.location.assign("login.php")&lt;/script>'
@@ -2284,9 +2284,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     mysqli_query($con, "INSERT INTO list (details, date_posted, time_posted, public)
                     VALUES ('$details', '$date', '$time', '$decision')");
-    header(location:home.php);
+    header("location:home.php");
   } else {
-    header(location:home.php);
+    header("location:home.php");
   }
 ?>
 </pre>
@@ -2338,7 +2338,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if($username == $table_users && ($password == $table_password)) {
       // Ser the session to the logged in user
       $_SESSION['user'] = $username;
-      header("location: home.php");
+      header("location:home.php");
     } else {
       Print '&lt;script>alert("Incorrect Password!");&lt;/script>'
       Print '&lt;script>window.location.assign("login.php")&lt;/script>'
@@ -2635,7 +2635,7 @@ Print '&lt;td align="center">&lt;a href="delete.php" id='. $row['id'] .'>delete&
     }
 
     mysqli_query($con, "UPDATE list SET details='$details', public='$public', date_edited='$date', time_edited='$time' WHERE id='$id'");
-    header(location:home.php);
+    header("location:home.php");
   }
 ?>
 </pre>
@@ -2740,9 +2740,9 @@ Print '&lt;td align="center">&lt;a href="delete.php" id='. $row['id'] .'>delete&
 
     mysqli_query($con, "INSERT INTO list (details, date_posted, time_posted, public)
                     VALUES ('$details', '$date', '$time', '$decision')");
-    header(location:home.php);
+    header("location:home.php");
   } else {
-    header(location:home.php);
+    header("location:home.php");
   }
 ?>
 </pre>
@@ -3134,7 +3134,7 @@ Print '&lt;td align="center">&lt;a href="delete.php" id='. $row['id'] .'>delete&
     }
 
     mysqli_query($con, "UPDATE list SET details='$details', public='$public', date_edited='$date', time_edited='$time' WHERE id='$id'");
-    header(location:home.php);
+    header("location:home.php");
   }
 ?>
 </pre>
@@ -3172,9 +3172,9 @@ Print '&lt;td align="center">&lt;a href="delete.php" id='. $row['id'] .'>delete&
 
     mysqli_query($con, "INSERT INTO list (details, date_posted, time_posted, public)
                     VALUES ('$details', '$date', '$time', '$decision')");
-    header(location:home.php);
+    header("location:home.php");
   } else {
-    header(location:home.php);
+    header("location:home.php");
   }
 ?>
 </pre>
@@ -3226,7 +3226,7 @@ Print '&lt;td align="center">&lt;a href="delete.php" id='. $row['id'] .'>delete&
     if($username == $table_users && ($password == $table_password)) {
       // Ser the session to the logged in user
       $_SESSION['user'] = $username;
-      header("location: home.php");
+      header("location:home.php");
     } else {
       Print '&lt;script>alert("Incorrect Password!");&lt;/script>'
       Print '&lt;script>window.location.assign("login.php")&lt;/script>'
@@ -3390,7 +3390,7 @@ Print '&lt;td align="center">&lt;a href="delete.php" id='. $row['id'] .'>delete&
     $con = mysqli_connect("localhost", "root", "", "first_db");
     $id = $_GET['id'];
     mysqli_query($con, "DELETE FROM list WHERE id='$id'");
-    header(location:home.php);
+    header("location:home.php");
   }
 ?>
 </pre>
